@@ -2,13 +2,30 @@ import { Br } from "../common/Br.component";
 import { Carousel } from "../common/Carousel.component";
 import { ProductCompany } from "./Company.component";
 import { Txt } from "../common/Txt.component";
+import { useQuery } from "@tanstack/react-query";
+import { getProductById } from "../../apis/product";
 
 /**
  * @param {{
  *  id: string
  * }}
+ * @returns {React.FC}
  */
 export const ProductDetail = ({ id }) => {
+  const {
+    data: productData,
+    isError,
+    isLoading,
+  } = useQuery(["product", id], () => getProductById(id));
+
+  if (isLoading) {
+    return <div>로딩중</div>;
+  }
+
+  if (isError) {
+    return <div>에러</div>;
+  }
+
   const {
     name,
     content,
@@ -19,23 +36,7 @@ export const ProductDetail = ({ id }) => {
     companyName,
     productImagePath,
     companyImagePath,
-  } = {
-    id: "733d7309-5ab8-47d2-98e6-4843e497418f",
-    category: "IT",
-    name: "아이패드",
-    rentalPrice: "40000",
-    regularPrice: "12000000",
-    content: "장난 아닌 아이패드입니다",
-    review: "4",
-    location: "전남대 제 1학생회관",
-    productImagePath: [
-      "https://placehold.co/600x400",
-      "https://placehold.co/600x400",
-      "https://placehold.co/600x400",
-    ],
-    companyName: "학생복지스토어",
-    companyImagePath: "https://placehold.co/400x400",
-  };
+  } = productData;
 
   const carouselData = productImagePath.map((src, index) => ({
     img: { src, alt: `${name}${index}` },
@@ -51,7 +52,7 @@ export const ProductDetail = ({ id }) => {
       <article className="my-4">
         <Txt typography="h5">{name}</Txt>
         <div className="flex items-baseline justify-between">
-          <Txt typography="h2">{`${rentalPrice} / 월`}</Txt>
+          <Txt typography="h2">{`${rentalPrice} / 일`}</Txt>
           <Txt typography="subtitle">{`정가: ${regularPrice}원~`}</Txt>
         </div>
         <Txt

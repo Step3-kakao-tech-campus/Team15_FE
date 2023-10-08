@@ -1,3 +1,7 @@
 import { atom } from "jotai";
 
-export const rentDateAtom = atom(new Date());
+/** @type {import("jotai").PrimitiveAtom<import('react-day-picker').DateRange | undefined>} */
+export const rentDateAtom = atom({
+  from: new Date(),
+  to: null,
+});
