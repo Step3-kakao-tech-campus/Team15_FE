@@ -5,13 +5,15 @@ import { isIOS, isMobile } from "react-device-detect";
 import classnames from "classnames";
 import { AppBar } from "../components/common/AppBar.component";
 import { BottomFullLink } from "../components/common/BottomFullLink.component";
+import { MyMoney } from "../components/paymoney/MyMoney";
+import { MoneyHistory } from "../components/paymoney/MoneyHistory";
 
 export const PayMoneyPage = () => {
-    const { id } = useParams();
+    const { piece } = useParams();
 
     return (
         <>
-            <AppBar to="/mypage/paymoney" />
+            <AppBar to="/mypage" title={"페이머니"} br={true} />
             <main
                 aria-label="main"
                 className={classnames(
@@ -22,8 +24,8 @@ export const PayMoneyPage = () => {
                         : "h-[calc(100vh-8.5rem)]"
                 )}
             >
-                <ProductDetail id={id} />
-                <BottomFullLink title="페이머니" to={`/rent/${id}`} br={true} />
+                <MyMoney piece={piece} />
+                <MoneyHistory />
             </main>
         </>
     );
