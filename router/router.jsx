@@ -1,12 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import { TestPage } from "../src/pages/Test.page";
 import { HomePage } from "../src/pages/Home.page";
+import { ProductDetailPage } from "../src/pages/ProductDetail.page";
+import { RentPage } from "../src/pages/Rent.page";
 import { PayMoneyPage } from "../src/pages/PayMoney.page";
 import { MyPage } from "../src/pages/My.page";
 import { ChargePage } from "../src/pages/Charge.page";
-import productRouter from "./product.router";
-import { RentalListPage } from "../src/pages/RentalList.page";
-import signRouter from "./sign.router";
+import { PaymentPage } from "../src/pages/Payment.page";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +17,14 @@ const router = createBrowserRouter([
     path: "/",
     element: <HomePage />,
   },
-  ...productRouter,
-  ...signRouter,
+  {
+    path: "/product/:id",
+    element: <ProductDetailPage />,
+  },
+  {
+    path: "/rent/:id",
+    element: <RentPage />,
+  },
   {
     path: "/paymoney",
     element: <PayMoneyPage />,
@@ -32,8 +38,8 @@ const router = createBrowserRouter([
     element: <ChargePage />,
   },
   {
-    path: "/rental",
-    element: <RentalListPage />,
+    path: "/payment/:id",
+    element: <PaymentPage />,
   },
 ]);
 

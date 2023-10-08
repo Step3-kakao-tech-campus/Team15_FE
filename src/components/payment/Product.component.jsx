@@ -22,7 +22,7 @@ export const PaymoneyProduct = ({ id }) => {
   }
 
   return (
-    <>
+    <div>
       <div className="flex justify-between py-6">
         <Txt typography="h5" className="font-normal">
           수령장소
@@ -35,12 +35,14 @@ export const PaymoneyProduct = ({ id }) => {
         <div className="flex gap-2">
           <Txt>대여상품</Txt>
           <Txt typography="h6" className="text-[#979797]">
-            {`(
-            ${rentData.from?.toLocaleDateString()} ~ ${rentData.to?.toLocaleDateString()}
-            )`}
+            (
+            {Array.isArray(rentData)
+              ? rentData.map((date) => date.toLocaleDateString()).join("~")
+              : `${rentData.toLocaleDateString()}~${rentData.toLocaleDateString()}`}
+            )
           </Txt>
         </div>
-        <div className="flex gap-2">
+        <div className="flex">
           <img
             className="w-24 h-24"
             src={product.productImagePath[0]}
@@ -53,6 +55,6 @@ export const PaymoneyProduct = ({ id }) => {
         </div>
         <Br />
       </div>
-    </>
+    </div>
   );
 };
