@@ -2,12 +2,30 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Coin {
-  @PrimaryGeneratedColumn()
-  coin_pk: number;
+  @PrimaryGeneratedColumn("increment")
+  coinPk: number;
 
-  @Column()
-  user_pk: number;
+  @Column("number")
+  userPk: number;
 
-  @Column()
+  @Column("number")
   piece: number;
+}
+
+@Entity()
+export class CoinLog {
+  @PrimaryGeneratedColumn("increment")
+  coingLogPk: number;
+
+  @Column("number")
+  coinPk: number;
+
+  @Column("number")
+  piece: number;
+
+  @Column("text")
+  coinType: string;
+
+  @Column("datetime", { default: new Date() })
+  createdAt: Date;
 }
