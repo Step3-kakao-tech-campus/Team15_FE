@@ -1,13 +1,13 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Coin {
+export class ProductImage {
   @PrimaryGeneratedColumn("increment")
-  companyPk: number;
+  imagePk: number;
+
+  @Column("number")
+  productPk: number;
 
   @Column("string")
-  name: string;
-
-  @Column("string")
-  companyImagePath: string;
+  productImagePath: string;
 }
