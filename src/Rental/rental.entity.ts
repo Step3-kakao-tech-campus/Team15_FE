@@ -5,10 +5,10 @@ export class Rental {
   @PrimaryGeneratedColumn("increment")
   rentalPk: number;
 
-  @Column("number")
+  @Column("integer")
   productPk: number;
 
-  @Column("number")
+  @Column("integer")
   userPk: number;
 
   @Column("datetime")
@@ -17,6 +17,6 @@ export class Rental {
   @Column("datetime")
   endAt: Date;
 
-  @Column("string")
+  @Column("text")
   status: string;
 }

@@ -5,15 +5,15 @@ export class Location {
   @PrimaryGeneratedColumn("increment")
   locationPk: number;
 
-  @Column("number")
+  @Column("integer")
   universityPk: number;
 
-  @Column("string")
+  @Column("text")
   latitude: string;
 
-  @Column("string")
+  @Column("text")
   longitute: string;
 
-  @Column("string")
+  @Column("text")
   name: string;
 }

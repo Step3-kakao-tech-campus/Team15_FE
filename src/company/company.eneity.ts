@@ -5,9 +5,9 @@ export class Company {
   @PrimaryGeneratedColumn("increment")
   companyPk: number;
 
-  @Column("string")
+  @Column("text")
   name: string;
 
-  @Column("string")
+  @Column("text")
   companyImagePath: string;
 }

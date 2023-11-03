@@ -5,10 +5,10 @@ export class Coin {
   @PrimaryGeneratedColumn("increment")
   coinPk: number;
 
-  @Column("number")
+  @Column("integer")
   userPk: number;
 
-  @Column("number")
+  @Column("integer")
   piece: number;
 }
 
@@ -17,15 +17,15 @@ export class CoinLog {
   @PrimaryGeneratedColumn("increment")
   coingLogPk: number;
 
-  @Column("number")
+  @Column("integer")
   coinPk: number;
 
-  @Column("number")
+  @Column("integer")
   piece: number;
 
   @Column("text")
   coinType: string;
 
-  @Column("datetime", { default: new Date() })
+  @Column("datetime", { default: () => "CURRENT_TIMESTAMP" })
   createdAt: Date;
 }

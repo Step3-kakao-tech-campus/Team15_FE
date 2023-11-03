@@ -5,9 +5,9 @@ export class ProductImage {
   @PrimaryGeneratedColumn("increment")
   imagePk: number;
 
-  @Column("number")
+  @Column("integer")
   productPk: number;
 
-  @Column("string")
+  @Column("text")
   productImagePath: string;
 }

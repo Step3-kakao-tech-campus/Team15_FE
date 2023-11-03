@@ -1,21 +1,30 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Review {
+export class User {
   @PrimaryGeneratedColumn("increment")
-  reviewPk: number;
+  userPk: number;
 
   @Column("integer")
-  rentalPk: number;
-
-  @Column("integer")
-  productPk: number;
-
-  @Column("integer")
-  star: number;
+  universityPk: number;
 
   @Column("text")
-  content: string;
+  email: string;
+
+  @Column("text")
+  password: string;
+
+  @Column("text")
+  nickname: string;
+
+  @Column("text")
+  role: string;
+
+  @Column("text")
+  idCardImagePath: string;
+
+  @Column("text")
+  profileImagePath: string;
 
   @Column("datetime", { default: () => "CURRENT_TIMESTAMP" })
   createdAt: Date;
@@ -24,8 +33,8 @@ export class Review {
     default: () => "CURRENT_TIMESTAMP",
     onUpdate: "CURRENT_TIMESTAMP",
   })
-  updatedAt: Date;
+  updateAt: Date;
 
   @Column("datetime", { nullable: true })
-  deletedAt: Date;
+  deleteAt: Date;
 }

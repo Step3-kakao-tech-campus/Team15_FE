@@ -5,28 +5,28 @@ export class Product {
   @PrimaryGeneratedColumn("increment")
   productPk: number;
 
-  @Column("number")
+  @Column("integer")
   locationPk: number;
 
-  @Column("number")
+  @Column("integer")
   companyPk: number;
 
-  @Column("number")
+  @Column("integer")
   categoryPk: number;
 
-  @Column("string")
+  @Column("text")
   name: string;
 
-  @Column("number")
+  @Column("integer")
   rentalPrice: number;
 
-  @Column("number")
+  @Column("integer")
   regularPrice: number;
 
-  @Column("string")
+  @Column("text")
   content: string;
 
-  @Column("datetime", { default: new Date() })
+  @Column("datetime", { default: () => "CURRENT_TIMESTAMP" })
   createdAt: Date;
 
   @Column("datetime", { nullable: true })

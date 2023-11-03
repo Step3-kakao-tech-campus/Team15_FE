@@ -5,6 +5,6 @@ export class University {
   @PrimaryGeneratedColumn("increment")
   universityPk: number;
 
-  @Column("string")
+  @Column("text")
   name: string;
 }

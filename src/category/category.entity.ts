@@ -5,6 +5,6 @@ export class Category {
   @PrimaryGeneratedColumn("increment")
   categoryPk: number;
 
-  @Column("string")
+  @Column("text")
   name: string;
 }
