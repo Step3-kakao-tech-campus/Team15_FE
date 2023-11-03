@@ -6,7 +6,7 @@ import {
   SuccessResponseDto,
 } from "src/response/response.dtos";
 
-@Controller("user")
+@Controller("/api/user")
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
@@ -16,8 +16,8 @@ export class UsersController {
     if (isSameEmail) {
       return new ErrorResponseDto({
         error: {
-          message: "이미 가입된 이메일입니다.",
           status: 400,
+          message: "회원가입에 실패했습니다.",
           reson: "join_duplicated_email",
         },
       });
@@ -25,7 +25,11 @@ export class UsersController {
     const isSuccess = await this.usersService.create(signUpDto);
     if (!isSuccess) {
       return new ErrorResponseDto({
-        error: { message: "회원가입에 실패했습니다." },
+        error: {
+          status: 400,
+          message: "회원가입에 실패했습니다.",
+          response: "join_duplicated_email",
+        },
       });
     }
     return new SuccessResponseDto({ response: null });
@@ -37,8 +41,8 @@ export class UsersController {
     if (isSmaeEmail) {
       return new ErrorResponseDto({
         error: {
-          message: "이미 가입된 이메일입니다.",
           status: 400,
+          message: "이미 가입된 이메일입니다.",
           reson: "join_duplicated_email",
         },
       });
@@ -54,7 +58,11 @@ export class UsersController {
     const accessToken = await this.usersService.login(signInDto);
     if (!accessToken) {
       return new ErrorResponseDto({
-        error: { message: "로그인에 실패했습니다." },
+        error: {
+          status: 400,
+          message: "로그인에 실패했습니다.",
+          reason: "login_password_length",
+        },
       });
     }
 

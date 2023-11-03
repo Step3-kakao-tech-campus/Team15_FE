@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from "typeorm";
 
 @Entity()
 export class User {
@@ -26,15 +33,12 @@ export class User {
   @Column("text")
   profileImagePath: string;
 
-  @Column("datetime", { default: () => "CURRENT_TIMESTAMP" })
+  @CreateDateColumn()
   createdAt: Date;
 
-  @Column("datetime", {
-    default: () => "CURRENT_TIMESTAMP",
-    onUpdate: "CURRENT_TIMESTAMP",
-  })
+  @UpdateDateColumn()
   updateAt: Date;
 
-  @Column("datetime", { nullable: true })
+  @DeleteDateColumn()
   deleteAt: Date;
 }

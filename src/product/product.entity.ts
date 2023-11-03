@@ -1,4 +1,10 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 
 @Entity()
 export class Product {
@@ -26,9 +32,9 @@ export class Product {
   @Column("text")
   content: string;
 
-  @Column("datetime", { default: () => "CURRENT_TIMESTAMP" })
+  @CreateDateColumn()
   createdAt: Date;
 
-  @Column("datetime", { nullable: true })
+  @DeleteDateColumn()
   deleteAt: Date;
 }
