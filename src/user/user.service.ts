@@ -45,4 +45,9 @@ export class UsersService {
 
     return user ? await this.jwtService.signAsync(payload) : null;
   }
+
+  async validateUser(payload: any) {
+    const user = await this.jwtService.verifyAsync(payload);
+    return !!user;
+  }
 }

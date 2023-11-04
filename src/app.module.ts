@@ -11,6 +11,7 @@ import { Review } from "./review/review.entity";
 import { University } from "./university/university.entity";
 import { ProductImage } from "./company/image.entity";
 import { Location } from "./location/location.entity";
+import { ConfigModule } from "@nestjs/config";
 
 @Module({
   imports: [
@@ -36,6 +37,9 @@ import { Location } from "./location/location.entity";
       // dropSchema: true,
     }),
     UsersModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
   ],
   controllers: [],
   providers: [],

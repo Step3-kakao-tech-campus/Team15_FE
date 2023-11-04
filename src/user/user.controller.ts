@@ -1,10 +1,11 @@
-import { Controller, Get, Post, Body, Res } from "@nestjs/common";
+import { Controller, Get, Post, Body, Res, Logger, Req } from "@nestjs/common";
 import { UsersService } from "./user.service";
 import { EmailDto, SignInDto, SignUpDto } from "./user.dto";
 import {
   ErrorResponseDto,
   SuccessResponseDto,
 } from "src/response/response.dtos";
+import { Request, Response } from "express";
 
 @Controller("/api/user")
 export class UsersController {
@@ -72,6 +73,33 @@ export class UsersController {
       httpOnly: true,
     });
 
+    return new SuccessResponseDto({ response: null });
+  }
+
+  @Post("/logout")
+  logout(@Res({ passthrough: true }) res: Response) {
+    res.cookie("Authentication", "", {
+      domain: "localhost",
+      path: "/",
+      httpOnly: true,
+    });
+    return new SuccessResponseDto({ response: null });
+  }
+
+  @Post("/validate")
+  async validate(@Req() req: Request) {
+    const isValidated = await this.usersService.validateUser(
+      req.cookies["Authentication"]
+    );
+    if (!isValidated) {
+      return new ErrorResponseDto({
+        error: {
+          status: 400,
+          message: "유효하지 않은 토큰입니다.",
+          reason: "login_unauthenticated_user",
+        },
+      });
+    }
     return new SuccessResponseDto({ response: null });
   }
 }
