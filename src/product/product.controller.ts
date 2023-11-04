@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from "@nestjs/common";
+import { Controller, Get, Param, Query } from "@nestjs/common";
 import { ProductService } from "./product.service";
 
 @Controller("api/product")
@@ -6,7 +6,10 @@ export class ProductController {
   constructor(private productService: ProductService) {}
 
   @Get()
-  async getProducts() {
+  async getProducts(@Query("search") search: string) {
+    if (search) {
+      return await this.productService.searchProducts(search);
+    }
     return await this.productService.getProducts();
   }
 

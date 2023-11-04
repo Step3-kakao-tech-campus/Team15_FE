@@ -15,4 +15,10 @@ export class ProductService {
   getProduct(id: number) {
     return this.productRepository.findOne({ where: { productPk: id } });
   }
+  searchProducts(search: string) {
+    return this.productRepository
+      .createQueryBuilder("product")
+      .where("product.name LIKE :search", { search: `%${search}%` })
+      .getMany();
+  }
 }
