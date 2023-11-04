@@ -5,17 +5,26 @@ import { User } from "./user.eneity";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { University } from "src/university/university.entity";
 import { JwtModule } from "@nestjs/jwt";
+import * as env from "dotenv";
+import { ConfigModule, ConfigService } from "@nestjs/config";
+env.config();
 
 @Module({
   controllers: [UsersController],
   providers: [UsersService],
   imports: [
     TypeOrmModule.forFeature([User, University]),
-    JwtModule.register({
-      global: true,
-      secret: "JWT_SECRET_KEY",
-      signOptions: { expiresIn: 3600 * 24 * 30 },
+    JwtModule.registerAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (configService: ConfigService) => ({
+        secret: configService.get("JWT_SECRET_KEY"),
+        signOptions: {
+          expiresIn: "1m",
+        },
+      }),
     }),
   ],
+  exports: [UsersService],
 })
 export class UsersModule {}
