@@ -12,4 +12,7 @@ export class ProductService {
   getProducts() {
     return this.productRepository.find();
   }
+  getProduct(id: number) {
+    return this.productRepository.findOne({ where: { productPk: id } });
+  }
 }
