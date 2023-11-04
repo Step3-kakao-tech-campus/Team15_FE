@@ -12,6 +12,7 @@ import { University } from "./university/university.entity";
 import { ProductImage } from "./company/image.entity";
 import { Location } from "./location/location.entity";
 import { ConfigModule } from "@nestjs/config";
+import { ProductModule } from "./product/product.module";
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { ConfigModule } from "@nestjs/config";
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    ProductModule,
   ],
   controllers: [],
   providers: [],
