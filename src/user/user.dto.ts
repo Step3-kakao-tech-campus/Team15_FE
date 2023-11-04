@@ -7,7 +7,7 @@ export interface SignUpDto {
 }
 
 export interface EmailDto {
-  eamil: string;
+  email: string;
 }
 
 export interface SignInDto {

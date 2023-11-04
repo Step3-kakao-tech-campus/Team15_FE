@@ -37,7 +37,7 @@ export class UsersController {
 
   @Post("join/check")
   async checkEmail(@Body() emailDto: EmailDto) {
-    const isSmaeEmail = await this.usersService.isSameEmail(emailDto.eamil);
+    const isSmaeEmail = await this.usersService.isSameEmail(emailDto.email);
     if (isSmaeEmail) {
       return new ErrorResponseDto({
         error: {

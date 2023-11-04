@@ -30,8 +30,8 @@ export class User {
   @Column("text")
   idCardImagePath: string;
 
-  @Column("text")
-  profileImagePath: string;
+  @Column("text", { nullable: true })
+  profileImagePath?: string;
 
   @CreateDateColumn()
   createdAt: Date;
@@ -40,5 +40,5 @@ export class User {
   updateAt: Date;
 
   @DeleteDateColumn()
-  deleteAt: Date;
+  deleteAt: Date | null;
 }
