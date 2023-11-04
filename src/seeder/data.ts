@@ -1,4 +1,4 @@
-export const universities = [{ name: "전남대학교" }, { name: "부산대학교" }];
+export const universities = [{ name: "부산대학교" }, { name: "전남대학교" }];
 
 export const locations = [
   {
@@ -18,7 +18,7 @@ export const categories = [
 
 export const users = [
   {
-    universitiyPk: 1,
+    universityPk: 1,
     email: "admin@borrowme.kr",
     password: "1234",
     nickname: "admin",

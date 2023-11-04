@@ -16,7 +16,7 @@ import {
 } from "src/response/response.dtos";
 import { Request, Response } from "express";
 
-@Controller("/api/user")
+@Controller("api/user")
 export class UsersController {
   constructor(private usersService: UsersService) {}
 
@@ -85,7 +85,7 @@ export class UsersController {
     return new SuccessResponseDto({ response: null });
   }
 
-  @Post("/logout")
+  @Post("logout")
   logout(@Res({ passthrough: true }) res: Response) {
     res.cookie("Authentication", "", {
       domain: "localhost",
@@ -95,7 +95,7 @@ export class UsersController {
     return new SuccessResponseDto({ response: null });
   }
 
-  @Post("/validate")
+  @Post("validate")
   async validate(@Req() req: Request) {
     const isValidated = await this.usersService.validateUser(
       req.cookies["Authentication"]
@@ -112,7 +112,7 @@ export class UsersController {
     return new SuccessResponseDto({ response: null });
   }
 
-  @Get("/")
+  @Get()
   async getUser(@Req() req: Request) {
     const user = await this.usersService.getUser(req.cookies["Authentication"]);
     if (!user) {
@@ -127,7 +127,7 @@ export class UsersController {
     return new SuccessResponseDto({ response: user });
   }
 
-  @Patch("/")
+  @Patch()
   async updateUser(@Req() req: Request, @Body() signUpDto: SignUpDto) {
     const user = await this.usersService.updateUser(
       req.cookies["Authentication"],

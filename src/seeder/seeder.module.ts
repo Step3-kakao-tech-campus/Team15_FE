@@ -7,16 +7,33 @@ import { Category } from "src/category/category.entity";
 import { User } from "src/user/user.eneity";
 import { Company } from "src/company/company.eneity";
 import { Product } from "src/product/product.entity";
+import { Coin, CoinLog } from "src/coin/coin.entity";
+import { ProductImage } from "src/company/image.entity";
+import { Rental } from "src/rental/rental.entity";
+import { Review } from "src/review/review.entity";
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: "sqlite",
       database: "db.sqlite",
-      entities: [University, Location, Category, User, Company, Product],
+      entities: [
+        User,
+        Category,
+        Coin,
+        CoinLog,
+        Company,
+        Location,
+        Product,
+        ProductImage,
+        Rental,
+        Review,
+        University,
+      ],
       logging: true,
       autoLoadEntities: true,
-      // dropSchema: true,
+      dropSchema: true,
+      synchronize: true,
     }),
     TypeOrmModule.forFeature([
       University,
