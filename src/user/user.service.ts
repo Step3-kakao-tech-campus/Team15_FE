@@ -1,5 +1,5 @@
 import { Injectable, Logger } from "@nestjs/common";
-import { SignInDto, SignUpDto } from "./user.dto";
+import { SignInDto, SignUpDto, UserDto } from "./user.dto";
 import { InjectRepository } from "@nestjs/typeorm";
 import { User } from "./user.eneity";
 import { Repository } from "typeorm";
@@ -41,13 +41,23 @@ export class UsersService {
       where: { email: signInDto.email, password: signInDto.password },
     });
 
-    const payload = {};
+    const payload = { email: user.email };
 
     return user ? await this.jwtService.signAsync(payload) : null;
   }
 
-  async validateUser(payload: any) {
-    const user = await this.jwtService.verifyAsync(payload);
+  async validateUser(payload: string) {
+    const { email } = await this.jwtService.verifyAsync(payload);
+    const user = await this.userRpository.findOne({ where: { email } });
     return !!user;
+  }
+
+  async getUser(payload: string) {
+    const { email } = await this.jwtService.verifyAsync(payload);
+    const user = await this.userRpository.findOne({ where: { email } });
+    const university = await this.universityRepository.findOne({
+      where: { universityPk: user.universityPk },
+    });
+    return new UserDto({ ...user, universityName: university.name });
   }
 }

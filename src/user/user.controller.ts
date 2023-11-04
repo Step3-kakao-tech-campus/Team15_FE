@@ -102,4 +102,19 @@ export class UsersController {
     }
     return new SuccessResponseDto({ response: null });
   }
+
+  @Get("/")
+  async getUser(@Req() req: Request) {
+    const user = await this.usersService.getUser(req.cookies["Authentication"]);
+    if (!user) {
+      return new ErrorResponseDto({
+        error: {
+          status: 400,
+          message: "유효하지 않은 토큰입니다.",
+          reason: "login_unauthenticated_user",
+        },
+      });
+    }
+    return new SuccessResponseDto({ response: user });
+  }
 }
