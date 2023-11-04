@@ -60,4 +60,22 @@ export class UsersService {
     });
     return new UserDto({ ...user, universityName: university.name });
   }
+
+  async updateUser(payload: string, userDto: SignUpDto) {
+    const { email } = await this.jwtService.verifyAsync(payload);
+    const user = await this.userRpository.findOne({ where: { email } });
+    const university = await this.universityRepository.findOne({
+      where: { name: userDto.universityName },
+    });
+    await this.userRpository.update(
+      { ...user },
+      {
+        nickname: userDto.nickname,
+        idCardImagePath: userDto.idCardImagePath,
+        universityPk: university.universityPk,
+        password: userDto.password,
+      }
+    );
+    return true;
+  }
 }

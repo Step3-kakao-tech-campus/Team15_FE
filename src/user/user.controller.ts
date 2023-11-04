@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Res, Logger, Req } from "@nestjs/common";
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Res,
+  Logger,
+  Req,
+  Patch,
+} from "@nestjs/common";
 import { UsersService } from "./user.service";
 import { EmailDto, SignInDto, SignUpDto } from "./user.dto";
 import {
@@ -106,6 +115,24 @@ export class UsersController {
   @Get("/")
   async getUser(@Req() req: Request) {
     const user = await this.usersService.getUser(req.cookies["Authentication"]);
+    if (!user) {
+      return new ErrorResponseDto({
+        error: {
+          status: 400,
+          message: "유효하지 않은 토큰입니다.",
+          reason: "login_unauthenticated_user",
+        },
+      });
+    }
+    return new SuccessResponseDto({ response: user });
+  }
+
+  @Patch("/")
+  async updateUser(@Req() req: Request, @Body() signUpDto: SignUpDto) {
+    const user = await this.usersService.updateUser(
+      req.cookies["Authentication"],
+      signUpDto
+    );
     if (!user) {
       return new ErrorResponseDto({
         error: {
