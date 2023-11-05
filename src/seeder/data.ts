@@ -3,8 +3,8 @@ export const universities = [{ name: "부산대학교" }, { name: "전남대학�
 export const locations = [
   {
     name: "전남대학교 제 1학생회관",
-    universitiyPk: 1,
-    latitue: "123",
+    universityPk: 1,
+    latitude: "123",
     longitute: "123",
   },
 ];
@@ -142,4 +142,9 @@ export const products = [
     companyPk: 2,
     content: "모델명NT931XED-KR58S\n브랜드삼성자체품목코드P500000LIV",
   },
+];
+
+export const coins = [{ userPk: 1, piece: 1_000_000_000_000 }];
+export const coinLogs = [
+  { coinPk: 1, piece: 1_000_000_000_000, coinType: "충전" },
 ];

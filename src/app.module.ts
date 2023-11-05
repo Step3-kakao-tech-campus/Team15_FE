@@ -13,6 +13,7 @@ import { ProductImage } from "./company/image.entity";
 import { Location } from "./location/location.entity";
 import { ConfigModule } from "@nestjs/config";
 import { ProductModule } from "./product/product.module";
+import { CoinModule } from './coin/coin.module';
 
 @Module({
   imports: [
@@ -42,6 +43,7 @@ import { ProductModule } from "./product/product.module";
       isGlobal: true,
     }),
     ProductModule,
+    CoinModule,
   ],
   controllers: [],
   providers: [],

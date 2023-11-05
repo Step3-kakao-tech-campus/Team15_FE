@@ -4,6 +4,8 @@ import { University } from "src/university/university.entity";
 import { Repository } from "typeorm";
 import {
   categories,
+  coinLogs,
+  coins,
   companies,
   locations,
   products,
@@ -15,6 +17,7 @@ import { Category } from "src/category/category.entity";
 import { User } from "src/user/user.eneity";
 import { Company } from "src/company/company.eneity";
 import { Location } from "src/location/location.entity";
+import { Coin, CoinLog } from "src/coin/coin.entity";
 
 @Injectable()
 export class SeederService {
@@ -31,7 +34,11 @@ export class SeederService {
     @InjectRepository(Company)
     private companyRepository: Repository<Company>,
     @InjectRepository(Product)
-    private productRepository: Repository<Product>
+    private productRepository: Repository<Product>,
+    @InjectRepository(Coin)
+    private coinRepository: Repository<Coin>,
+    @InjectRepository(CoinLog)
+    private coinLogRepository: Repository<CoinLog>
   ) {}
 
   async seedUniversities() {
@@ -66,6 +73,16 @@ export class SeederService {
       products.map((university) => this.productRepository.save(university))
     ).catch((err) => this.logger.error(err));
   }
+  async seedCoins() {
+    await Promise.all(
+      coins.map((coin) => this.coinRepository.save(coin))
+    ).catch((err) => this.logger.error(err));
+  }
+  async seedCoinLogs() {
+    await Promise.all(
+      coinLogs.map((coin) => this.coinLogRepository.save(coin))
+    ).catch((err) => this.logger.error(err));
+  }
 
   async seedAll() {
     await this.seedUniversities();
@@ -74,5 +91,7 @@ export class SeederService {
     await this.seedUsers();
     await this.seedCompanies();
     await this.seedProducts();
+    await this.seedCoins();
+    await this.seedCoinLogs();
   }
 }
