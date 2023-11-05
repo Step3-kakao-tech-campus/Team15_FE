@@ -13,7 +13,10 @@ import { ProductImage } from "./company/image.entity";
 import { Location } from "./location/location.entity";
 import { ConfigModule } from "@nestjs/config";
 import { ProductModule } from "./product/product.module";
-import { CoinModule } from './coin/coin.module';
+import { CoinModule } from "./coin/coin.module";
+import { CategoryController } from "./category/category.controller";
+import { CategoryService } from "./category/category.service";
+import { CategoryModule } from "./category/category.module";
 
 @Module({
   imports: [
@@ -38,15 +41,14 @@ import { CoinModule } from './coin/coin.module';
       logging: true,
       // dropSchema: true,
     }),
-    UsersModule,
     ConfigModule.forRoot({
       isGlobal: true,
     }),
+    UsersModule,
     ProductModule,
     CoinModule,
+    CategoryModule,
   ],
-  controllers: [],
-  providers: [],
 })
 export class AppModule {
   constructor() {}
