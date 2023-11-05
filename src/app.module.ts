@@ -17,6 +17,8 @@ import { CoinModule } from "./coin/coin.module";
 import { CategoryController } from "./category/category.controller";
 import { CategoryService } from "./category/category.service";
 import { CategoryModule } from "./category/category.module";
+import { RentalModule } from './rental/rental.module';
+import { ReviewModule } from './review/review.module';
 
 @Module({
   imports: [
@@ -48,6 +50,8 @@ import { CategoryModule } from "./category/category.module";
     ProductModule,
     CoinModule,
     CategoryModule,
+    RentalModule,
+    ReviewModule,
   ],
 })
 export class AppModule {
