@@ -79,4 +79,17 @@ export class CoinService {
       where: { userPk: userFromDb.userPk },
     });
   }
+
+  async getCoinLog(user: UserDto) {
+    const userFromDb = await this.userRepository.findOne({
+      where: { email: user.email },
+    });
+    const coinFromDb = await this.coinRepository.findOne({
+      where: { userPk: userFromDb.userPk },
+    });
+    return await this.coinLogRepository.find({
+      where: { coinPk: coinFromDb.coinPk },
+      order: { createdAt: "DESC" },
+    });
+  }
 }
