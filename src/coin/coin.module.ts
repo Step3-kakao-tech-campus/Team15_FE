@@ -5,10 +5,14 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { Coin, CoinLog } from "./coin.entity";
 import { UsersModule } from "src/user/user.module";
 import { User } from "src/user/user.eneity";
+import { Product } from "src/product/product.entity";
 
 @Module({
   providers: [CoinService],
   controllers: [CoinController],
-  imports: [TypeOrmModule.forFeature([Coin, CoinLog, User]), UsersModule],
+  imports: [
+    TypeOrmModule.forFeature([Coin, CoinLog, User, Product]),
+    UsersModule,
+  ],
 })
 export class CoinModule {}

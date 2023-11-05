@@ -33,12 +33,12 @@ export class ProductService {
     const userFromDb = await this.userRepository.findOne({
       where: { email: user.email },
     });
-    const { startDate, endDate } = rentProductDto;
+    const { startAt, endAt } = rentProductDto;
 
     const rental = this.rentalRepository.create({
       userPk: userFromDb.userPk,
-      startAt: new Date(startDate),
-      endAt: new Date(endDate),
+      startAt: new Date(startAt),
+      endAt: new Date(endAt),
       productPk: id,
       status: "pending",
     });

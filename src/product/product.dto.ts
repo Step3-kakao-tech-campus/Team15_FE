@@ -1,4 +1,4 @@
 export interface RentProductDto {
-  startDate: string;
-  endDate: string;
+  startAt: string;
+  endAt: string;
 }
