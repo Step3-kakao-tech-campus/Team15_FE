@@ -59,4 +59,24 @@ export class CoinService {
       where: { userPk: userFromDb.userPk },
     });
   }
+  async charge(user: UserDto, body: { piece: number }) {
+    const userFromDb = await this.userRepository.findOne({
+      where: { email: user.email },
+    });
+    const coinFromDb = await this.coinRepository.findOne({
+      where: { userPk: userFromDb.userPk },
+    });
+    await this.coinLogRepository.save({
+      coinPk: coinFromDb.coinPk,
+      piece: body.piece,
+      coinType: "충전",
+    });
+    await this.coinRepository.update(
+      { userPk: userFromDb.userPk },
+      { piece: +coinFromDb.piece + +body.piece }
+    );
+    return await this.coinRepository.findOne({
+      where: { userPk: userFromDb.userPk },
+    });
+  }
 }

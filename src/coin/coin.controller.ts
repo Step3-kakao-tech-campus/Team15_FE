@@ -44,4 +44,19 @@ export class CoinController {
     }
     return await this.coinService.useCoin(user, productId, body);
   }
+
+  @Post("charge")
+  async charge(@Req() req: Request, @Body() body: { piece: number }) {
+    const user = await this.usersService.getUser(req.cookies["Authentication"]);
+    if (!user) {
+      return new ErrorResponseDto({
+        error: {
+          status: 400,
+          message: "유효하지 않은 토큰입니다.",
+          reason: "login_unauthenticated_user",
+        },
+      });
+    }
+    return await this.coinService.charge(user, body);
+  }
 }
