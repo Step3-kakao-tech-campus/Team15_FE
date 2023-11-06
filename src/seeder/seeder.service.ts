@@ -9,6 +9,8 @@ import {
   companies,
   locations,
   products,
+  rentals,
+  reviews,
   universities,
   users,
 } from "./data";
@@ -18,6 +20,8 @@ import { User } from "src/user/user.eneity";
 import { Company } from "src/company/company.eneity";
 import { Location } from "src/location/location.entity";
 import { Coin, CoinLog } from "src/coin/coin.entity";
+import { Review } from "src/review/review.entity";
+import { Rental } from "src/rental/rental.entity";
 
 @Injectable()
 export class SeederService {
@@ -38,7 +42,11 @@ export class SeederService {
     @InjectRepository(Coin)
     private coinRepository: Repository<Coin>,
     @InjectRepository(CoinLog)
-    private coinLogRepository: Repository<CoinLog>
+    private coinLogRepository: Repository<CoinLog>,
+    @InjectRepository(Rental)
+    private rentalRepository: Repository<Rental>,
+    @InjectRepository(Review)
+    private reviewRepository: Repository<Review>
   ) {}
 
   async seedUniversities() {
@@ -83,15 +91,29 @@ export class SeederService {
       coinLogs.map((coin) => this.coinLogRepository.save(coin))
     ).catch((err) => this.logger.error(err));
   }
+  async seedReviews() {
+    await Promise.all(
+      reviews.map((review) => this.reviewRepository.save(review))
+    ).catch((err) => this.logger.error(err));
+  }
+  async seedRentals() {
+    await Promise.all(
+      rentals.map((rental) => this.rentalRepository.save(rental))
+    ).catch((err) => this.logger.error(err));
+  }
 
   async seedAll() {
-    await this.seedUniversities();
-    await this.seedLocations();
-    await this.seedCategories();
-    await this.seedUsers();
-    await this.seedCompanies();
-    await this.seedProducts();
-    await this.seedCoins();
-    await this.seedCoinLogs();
+    Promise.all([
+      await this.seedUniversities(),
+      await this.seedLocations(),
+      await this.seedCategories(),
+      await this.seedUsers(),
+      await this.seedCompanies(),
+      await this.seedProducts(),
+      await this.seedCoins(),
+      await this.seedCoinLogs(),
+      await this.seedReviews(),
+      await this.seedRentals(),
+    ]);
   }
 }

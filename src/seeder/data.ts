@@ -148,3 +148,22 @@ export const coins = [{ userPk: 1, piece: 1_000_000_000_000 }];
 export const coinLogs = [
   { coinPk: 1, piece: 1_000_000_000_000, coinType: "충전" },
 ];
+
+export const rentals = [
+  {
+    productPk: 1,
+    userPk: 1,
+    startAt: new Date(),
+    endAt: new Date().setDate(new Date().getDate() + 2),
+    status: "대여중",
+  },
+];
+
+export const reviews = [
+  {
+    rentalPk: 1,
+    productPk: 1,
+    star: 5,
+    content: "좋아요",
+  },
+];

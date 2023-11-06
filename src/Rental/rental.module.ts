@@ -11,5 +11,6 @@ import { Product } from "src/product/product.entity";
   providers: [RentalService],
   controllers: [RentalController],
   imports: [TypeOrmModule.forFeature([Rental, User, Product]), UsersModule],
+  exports: [RentalService],
 })
 export class RentalModule {}

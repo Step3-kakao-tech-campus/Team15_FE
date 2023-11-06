@@ -3,6 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Review } from "./review.entity";
 import { Repository } from "typeorm";
 import { ReviewDto } from "./review.dto";
+import { Rental } from "src/rental/rental.entity";
 
 @Injectable()
 export class ReviewService {
@@ -23,10 +24,12 @@ export class ReviewService {
     });
   }
 
-  async createReview(review: ReviewDto, rentalId: number) {
+  async createReview(review: ReviewDto, rental: Rental) {
     return await this.reviewRepository.save({
-      ...review,
-      rentalPk: rentalId,
+      star: review.star,
+      content: review.content,
+      rentalPk: rental.rentalPk,
+      productPk: rental.productPk,
     });
   }
 
@@ -35,6 +38,7 @@ export class ReviewService {
   }
 
   async deleteReview(reviewId: number) {
-    return await this.reviewRepository.delete({ reviewPk: reviewId });
+    await this.reviewRepository.delete({ reviewPk: reviewId });
+    return this.getReviewByRentalId(reviewId);
   }
 }
