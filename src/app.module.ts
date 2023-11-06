@@ -14,11 +14,11 @@ import { Location } from "./location/location.entity";
 import { ConfigModule } from "@nestjs/config";
 import { ProductModule } from "./product/product.module";
 import { CoinModule } from "./coin/coin.module";
-import { CategoryController } from "./category/category.controller";
-import { CategoryService } from "./category/category.service";
 import { CategoryModule } from "./category/category.module";
-import { RentalModule } from './rental/rental.module';
-import { ReviewModule } from './review/review.module';
+import { RentalModule } from "./rental/rental.module";
+import { ReviewModule } from "./review/review.module";
+import { ServeStaticModule } from "@nestjs/serve-static";
+import { join } from "path";
 
 @Module({
   imports: [
@@ -45,6 +45,9 @@ import { ReviewModule } from './review/review.module';
     }),
     ConfigModule.forRoot({
       isGlobal: true,
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, "..", "..", "dist"),
     }),
     UsersModule,
     ProductModule,

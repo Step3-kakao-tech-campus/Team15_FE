@@ -6,6 +6,9 @@ import { RentProductDto } from "./product.dto";
 import { Rental } from "src/rental/rental.entity";
 import { User } from "src/user/user.eneity";
 import { UserDto } from "src/user/user.dto";
+import { Category } from "src/category/category.entity";
+import { Review } from "src/review/review.entity";
+import { Location } from "src/location/location.entity";
 
 @Injectable()
 export class ProductService {
@@ -14,11 +17,35 @@ export class ProductService {
     private productRepository: Repository<Product>,
     @InjectRepository(Rental)
     private rentalRepository: Repository<Rental>,
+    @InjectRepository(Category)
+    private categoryRepository: Repository<Category>,
     @InjectRepository(User)
-    private userRepository: Repository<User>
+    private userRepository: Repository<User>,
+    @InjectRepository(Review)
+    private reviewRepository: Repository<Review>,
+    @InjectRepository(Location)
+    private locationRepository: Repository<Location>
   ) {}
-  getProducts() {
-    return this.productRepository.find();
+  async getProducts() {
+    const products = await this.productRepository.find();
+    const categorys = await this.categoryRepository.find();
+    const reviews = await this.reviewRepository.find();
+    const locations = await this.locationRepository.find();
+    return products.map((product) => ({
+      id: product.productPk,
+      category: categorys.filter(
+        (category) => product.categoryPk === category.categoryPk
+      )[0].name,
+      productName: product.name,
+      rentalPrice: product.rentalPrice,
+      regularPrice: product.regularPrice,
+      review: reviews.filter((review) => product.productPk === review.productPk)
+        .length,
+      location: locations.filter(
+        (location) => product.locationPk === location.locationPk
+      )[0].name,
+      productImagePath: ["https://placehold.co/400"],
+    }));
   }
   getProduct(id: number) {
     return this.productRepository.findOne({ where: { productPk: id } });

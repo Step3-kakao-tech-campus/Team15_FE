@@ -1,13 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Res,
-  Logger,
-  Req,
-  Patch,
-} from "@nestjs/common";
+import { Controller, Get, Post, Body, Res, Req, Patch } from "@nestjs/common";
 import { UsersService } from "./user.service";
 import { EmailDto, SignInDto, SignUpDto } from "./user.dto";
 import {
