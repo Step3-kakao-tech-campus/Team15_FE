@@ -1,6 +1,66 @@
-# Team15
+# 전남대 15조 [빌리지]🏘️ _ 보로미(BorrowMe)
+대학생을 위한 B2C 기반 대여 서비스 웹/앱
 
-15조
+## 보로미(BorrowMe)란?
+  대학생을 위한 B2C 기반 대여 서비스 웹/앱으로 고가의 맥북이나 한학기만 필요한 전공서적들을 정해진 대여비로부터 원하는 기간동안만 대여할 수 있는 시스템. 사전에 학생회관(생협)과 연계하여 학교 내 건물에서 수령 및 반납이 가능해 편리힘.
+  또한 원하는 물건을 쉽고 가볍게 빌리기(UX Goal)위한 목표를 설정함.
+
+## 🕐 개발기간
+- 23.08.25일 - 23.11.11일
+
+## 👩‍👩‍👧‍👦 멤버구성
+### FE
+|<img src="https://github.com/loopy-lim.png"  width="150" height="150"/>|<img src="https://github.com/mlnwns.png"  width="150" height="150"/>|<img src="https://github.com/minkonging.png"  width="150" height="150"/>|
+|:---:|:---:|:---:|
+|[임채승](https://github.com/loopy-lim)|[곽민준](https://github.com/mlnwns)|[소민경](https://github.com/minkonging)|
+
+### BE
+|<img src="https://github.com/geunho00.png"  width="150" height="150"/>|<img src="https://github.com/zxc88kr.png"  width="150" height="150"/>|<img src="https://github.com/C0Zl.png"  width="150" height="150"/>|
+|:---:|:---:|:---:|
+|[김근호](https://github.com/geunho00)|[박찬](https://github.com/zxc88kr)|[이지혜](https://github.com/C0Zl)|
+</br>
+
+## 기술 stack
+### WEB
+- React.js
+- Capacitor.js
+### SERVER
+- Spring
+- Mysql
+### Deploy
+- Docker
+- Nginx
+
+## 서비스 소개
+|기능|디자인|상세 설명|
+|:---:|:---:|:---:|
+|상품 조회하기|<a href="https://ibb.co/Tqz6ytG"><img src="https://i.ibb.co/1JH1cTN/image.png" alt="image" border="0"></a>|상품 전체를 스크롤로 조회하고, <br>개별 상품을 선택하여 조회합니다.|
+|대여 날짜 선택하기|<a href="https://ibb.co/MZ9mVBk"><img src="https://i.ibb.co/JmC973j/image.png" alt="image" border="0"></a>|원하는 대여 날짜를 선택합니다.|
+|상품 검색하기|<a href="https://ibb.co/mRyqNwm"><img src="https://i.ibb.co/10Xqz53/image.png" alt="image" border="0"></a>|검색을 통해 원하는 상품을 찾을 수 있습니다.|
+|페이머니 충전 및 결제하기|<a href="https://ibb.co/GkywM49"><img src="https://i.ibb.co/Y8m9dFX/image.png" alt="image" border="0"></a>|페이머니를 통해 결제를 진행합니다. <br>충전된 페이머니 잔액이 부족하면 충전페이지로 바로 이동합니다.|
+|대여내역 조회 및 리뷰 작성하기|<a href="https://ibb.co/znFRXbn"><img src="https://i.ibb.co/cgwF6tg/image.png" alt="image" border="0"></a>|대여내역을 조회하여 리뷰를 작성할 수 있습니다.|
+
+## 주요 Flow(흐름)
+웹/앱 시작시 보로미 splash 화면이 나오고, 사용자는 로그인(email 및 비밀번호 입력)할 수 있다. 회원이 아니라면 회원가입 및 학교인증 순서를 거쳐 로그인이 가능하다.
+메인화면에서 카테고리나 리스트 혹은 캐러셀을 통해 원하는 물건의 유무를 확인 가능하고, 해당 물품을 누르면 상세 정보 페이지가 떠 상품 대여 가격, 기간, 상품에 대한 스펙, 회사 등에 대한 정보 열람이 가능하다. 하단의 대여하기 버튼을 클릭하면
+대여날짜를 선택할 수 있는 캘린더가 나오고 원하는 대여 날짜 기간을 선택하면 결제하기 버튼이 활성화된다.
+하단의 결제하기 버튼을 누르면 결제 페이지로 이동하여 페이머니 잔액이 대여 금액 이상일때에 결제하기 버튼이 활성화되어 최종 결제가 진행된다.
+대여 내역 페이지에서 대여 해왔던 기록들 및 현재 대여 상태에 대한 조회 및 리뷰 작성이 가능하다.
+검색 탭에서 물품 검색이 가능하다.
+마이페이지에서 페이머니 잔액 및 충전이 가능하다.
+
+## 주요 기능
+### 로그인
+- 사용자의 email 및 비밀번호 입력
+### 회원가입 및 학교 인증 페이지
+
+## 15조 기타 링크
+[비공식 노션](https://www.notion.so/loopy-lim/Kakao-Team-15-2f7a7a7b9c0049a5afdbc7933452083a/)
+[공식 노션](https://www.notion.so/ad7ae2629b6d4267acc52fb4e4fa22bc?v=c78021d44a9641c9b54ef9c20d8202a1)
+[BE_API](https://loopy-lim.notion.site/BE_API-c02e5946141b45f889a22cb909d0d617)
+[FE 깃헙](https://github.com/Step3-kakao-tech-campus/Team15_FE)
+[BE 깃헙](https://github.com/Step3-kakao-tech-campus/Team15_BE)
+[Figma](https://www.figma.com/file/CoUEoS5JYZz78AYT5c4Oq1/%EC%99%80%EC%9D%B4%EC%96%B4-%ED%94%84%EB%A0%88%EC%9E%84?type=design&node-id=0-1&mode=design)
 
 ## capatitor 실행과 관련하여
 
@@ -14,256 +74,3 @@ ionic cap run android -l --external
 ```sh
 npm install -g @ionic/cli native-run
 ```
-
-## 카카오 테크 캠퍼스 3단계 진행 보드
-
-</br>
-
-## 배포와 관련하여
-
-```
-
-최종 배포는 크램폴린으로 배포해야 합니다.
-
-하지만 배포 환경의 불편함이 있는 경우를 고려하여
-
-임의의 배포를 위해 타 배포 환경을 자유롭게 이용해도 됩니다. (단, 금액적인 지원은 어렵습니다.)
-
-아래는 추가적인 설정을 통해 (체험판, 혹은 프리 티어 등)무료로 클라우드 배포가 가능한 서비스입니다.
-
-ex ) AWS(아마존), GCP(구글), Azure(마이크로소프트), Cloudtype
-
-```
-
-## Notice
-
-```
-필요 산출물들은 수료 기준에 영향을 주는 것은 아니지만,
-주차 별 산출물을 기반으로 평가가 이루어 집니다.
-
-주차 별 평가 점수는 추 후 최종 평가에 최종 합산 점수로 포함됩니다.
-```
-
-![레포지토리 운영-001 (1)](https://github.com/Step3-kakao-tech-campus/practice/assets/138656575/acb0dccd-0441-4200-999a-981865535d5f)
-![image](https://github.com/Step3-kakao-tech-campus/practice/assets/138656575/b42cbc06-c5e7-4806-8477-63dfa8e807a0)
-
-[git flowchart_FE.pdf](https://github.com/Step3-kakao-tech-campus/practice/files/12521045/git.flowchart_FE.pdf)
-
-</br>
-
-## 필요 산출물
-
-<details>
-<summary>Step3. Week-1</summary>
-<div>
-    
-✅**1주차**
-    
-```
-    - 5 Whys
-    - 마켓 리서치
-    - 페르소나 & 저니맵
-    - 와이어 프레임
-    - 칸반보드
-```
-    
-</div>
-</details>
-
----
-
-<details>
-<summary>Step3. Week-2</summary>
-<div>
-    
-✅**2주차**
-    
-```
-    - ERD 설계서
-    
-    - API 명세서
-```
-    
-</div>
-</details>
-
----
-
-<details>
-<summary>Step3. Week-3</summary>
-<div>
-    
-✅**3주차**
-    
-```
-    - 최종 기획안
-```
-    
-</div>
-</details>
-
----
-
-<details>
-<summary>Step3. Week-4</summary>
-<div>
-    
-✅**4주차**
-    
-```
-    - 4주차 github
-    
-    - 4주차 노션
-```
-    
-</div>
-</details>
-
----
-
-<details>
-<summary>Step3. Week-5</summary>
-<div>
-    
-✅**5주차**
-    
-```
-    - 5주차 github
-    
-    - 5주차 노션
-```
-    
-</div>
-</details>
-
----
-
-<details>
-<summary>Step3. Week-6</summary>
-<div>
-    
-✅**6주차**
-    
-```
-    - 6주차 github
-    
-    - 중간발표자료
-    
-    - 피어리뷰시트
-```
-    
-</div>
-</details>
-
----
-
-<details>
-<summary>Step3. Week-7</summary>
-<div>
-    
-✅**7주차**
-    
-```
-    - 7주차 github
-    
-    - 7주차 노션
-```
-    
-</div>
-</details>
-
----
-
-<details>
-<summary>Step3. Week-8</summary>
-<div>
-    
-✅**8주차**
-    
-```
-    - 중간고사
-    
-```
-    
-</div>
-</details>
-
----
-
-<details>
-<summary>Step3. Week-9</summary>
-<div>
-    
-✅**9주차**
-    
-```
-    - 9주차 github
-    
-    - 9주차 노션
-```
-    
-</div>
-</details>
-
----
-
-<details>
-<summary>Step3. Week-10</summary>
-<div>
-    
-✅**10주차**
-    
-```
-    - 10주차 github
-    
-    - 테스트 시나리오 명세서
-    
-    - 테스트 결과 보고서
-```
-    
-</div>
-</details>
-
----
-
-<details>
-<summary>Step3. Week-11</summary>
-<div>
-    
-✅**11주차**
-    
-```
-    - 최종 기획안
-    
-    - 배포 인스턴스 링크
-```
-    
-</div>
-</details>
-
----
-
-## **과제 상세 : 수강생들이 과제를 진행할 때, 유념해야할 것**
-
-```
-1. README.md 파일은 동료 개발자에게 프로젝트에 쉽게 랜딩하도록 돕는 중요한 소통 수단입니다.
-해당 프로젝트에 대해 아무런 지식이 없는 동료들에게 설명하는 것처럼 쉽고, 간결하게 작성해주세요.
-
-2. 좋은 개발자는 디자이너, 기획자, 마케터 등 여러 포지션에 있는 분들과 소통을 잘합니다.
-UI 컴포넌트의 명칭과 이를 구현하는 능력은 필수적인 커뮤니케이션 스킬이자 필요사항이니 어떤 상황에서 해당 컴포넌트를 사용하면 좋을지 고민하며 코드를 작성해보세요.
-
-```
-
-</br>
-
-## **코드리뷰 관련: review branch로 PR시, 아래 내용을 포함하여 코멘트 남겨주세요.**
-
-**1. PR 제목과 내용을 아래와 같이 작성 해주세요.**
-
-> PR 제목 : 부산대*0조*아이템명\_0주차
-
-</br>
-
-</div>
-
----
