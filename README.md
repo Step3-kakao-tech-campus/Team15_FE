@@ -27,7 +27,7 @@
 ## 서비스 소개
 |기능|디자인|상세 설명|
 |:---:|:---:|:---:|
-|학생인증으로 회원가입|![image](https://github.com/Step3-kakao-tech-campus/Team15_FE/assets/102536227/61600c72-4f87-427b-bea6-61fa0f35bb9e)|학생증을 사진 촬영하여, <br>학생인증이 가능합니다.|
+|학생인증으로 회원가입|<img src="https://github.com/Step3-kakao-tech-campus/Team15_FE/assets/102536227/61600c72-4f87-427b-bea6-61fa0f35bb9e" width="120" height="200"/>|학생증을 사진 촬영하여, <br>학생인증이 가능합니다.|
 |상품 조회하기|<a href="https://ibb.co/Tqz6ytG"><img src="https://i.ibb.co/1JH1cTN/image.png" alt="image" border="0"></a>|상품 전체를 스크롤로 조회하고, <br>개별 상품을 선택하여 조회합니다.|
 |대여 날짜 선택하기|<a href="https://ibb.co/MZ9mVBk"><img src="https://i.ibb.co/JmC973j/image.png" alt="image" border="0"></a>|원하는 대여 날짜를 선택합니다.|
 |상품 검색하기|<a href="https://ibb.co/mRyqNwm"><img src="https://i.ibb.co/10Xqz53/image.png" alt="image" border="0"></a>|검색을 통해 원하는 상품을 찾을 수 있습니다.|
@@ -43,22 +43,16 @@
 대여 내역 페이지에서 대여 해왔던 기록들 및 현재 대여 상태에 대한 조회 및 리뷰 작성이 가능하다.
 검색 탭에서 물품 검색이 가능하다.
 마이페이지에서 페이머니 잔액 및 충전이 가능하다.
-<br/>
-
-## 주요 기능
-### 로그인
-- 사용자의 email 및 비밀번호 입력
-### 회원가입 및 학교 인증 페이지
-<br/>
+<br/><br/>
 
 ## 15조 기타 링크
-[비공식 노션](https://www.notion.so/loopy-lim/Kakao-Team-15-2f7a7a7b9c0049a5afdbc7933452083a/)
-[공식 노션](https://www.notion.so/ad7ae2629b6d4267acc52fb4e4fa22bc?v=c78021d44a9641c9b54ef9c20d8202a1)
-[BE_API](https://loopy-lim.notion.site/BE_API-c02e5946141b45f889a22cb909d0d617)
-[FE 깃헙](https://github.com/Step3-kakao-tech-campus/Team15_FE)
-[BE 깃헙](https://github.com/Step3-kakao-tech-campus/Team15_BE)
-[Figma](https://www.figma.com/file/CoUEoS5JYZz78AYT5c4Oq1/%EC%99%80%EC%9D%B4%EC%96%B4-%ED%94%84%EB%A0%88%EC%9E%84?type=design&node-id=0-1&mode=design)
-<br/>
+- [비공식 노션](https://www.notion.so/loopy-lim/Kakao-Team-15-2f7a7a7b9c0049a5afdbc7933452083a/)
+- [공식 노션](https://www.notion.so/ad7ae2629b6d4267acc52fb4e4fa22bc?v=c78021d44a9641c9b54ef9c20d8202a1)
+- [BE_API](https://loopy-lim.notion.site/BE_API-c02e5946141b45f889a22cb909d0d617)
+- [FE 깃헙](https://github.com/Step3-kakao-tech-campus/Team15_FE)
+- [BE 깃헙](https://github.com/Step3-kakao-tech-campus/Team15_BE)
+- [Figma](https://www.figma.com/file/CoUEoS5JYZz78AYT5c4Oq1/%EC%99%80%EC%9D%B4%EC%96%B4-%ED%94%84%EB%A0%88%EC%9E%84?type=design&node-id=0-1&mode=design)
+<br/><br/>
 
 ## 기술 stack
 ### WEB
@@ -70,7 +64,7 @@
 ### Deploy
 - Docker
 - Nginx
-<br/>
+<br/><br/>
 
 
 ## capatitor 실행과 관련하여
