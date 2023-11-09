@@ -47,7 +47,7 @@ import { join } from "path";
       isGlobal: true,
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, "..", "..", "dist"),
+      rootPath: join(__dirname, "..", "frontend"),
     }),
     UsersModule,
     ProductModule,

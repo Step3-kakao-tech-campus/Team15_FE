@@ -10,6 +10,7 @@ RUN pnpm run build
 # Run stage
 FROM krmp-d2hub-idock.9rum.cc/goorm/node:16
 WORKDIR /usr/src/app
+COPY . /usr/src/app
 COPY --from=build /usr/src/app/dist ./borrow-me/frontend
 RUN npm install --global pnpm
 RUN corepack enable
