@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const https = axios.create({
-  baseURL: process.env.VITE_API_URL + "/api",
+  baseURL: "/api",
   withCredentials: true,
 });
 

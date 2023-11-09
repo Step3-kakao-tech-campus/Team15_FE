@@ -3,10 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { defineCustomElements } from "@ionic/pwa-elements/loader";
-import * as dotenv from "dotenv";
-
 defineCustomElements(window);
-dotenv.config();
 
 if (process.env.NODE_ENV === "development") {
   const { worker } = await import("./mocks/browser");
