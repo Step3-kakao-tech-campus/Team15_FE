@@ -14,7 +14,7 @@ COPY ./borrow-me /usr/src/app
 COPY --from=build /usr/src/app/dist ./frontend
 RUN npm install --global pnpm
 RUN corepack enable
-RUN cd /usr/src/app/borrow-me
+RUN cd /usr/src/app/
 RUN pnpm install --frozen-lockfile
 RUN pnpm run build
 RUN pnpm run seed:run
