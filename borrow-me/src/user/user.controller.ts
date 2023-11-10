@@ -76,7 +76,8 @@ export class UsersController {
     }
 
     res["cookie"]("Authentication", accessToken, {
-      domain: this.configService.get("JWT_LOCAL_PATH"),
+      // domain: this.configService.get("JWT_LOCAL_PATH"),
+      maxAge: 1000 * 60 * 60 * 24 * 100,
       path: "/",
       httpOnly: true,
     });

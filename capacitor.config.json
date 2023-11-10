@@ -1,8 +1,13 @@
 {
-  "appId": "com.village.app",
+  "appId": "com.village",
   "appName": "borrow-me",
   "webDir": "dist",
   "server": {
     "androidScheme": "https"
+  },
+  "plugins": {
+    "CapacitorCookies": {
+      "enabled": true
+    }
   }
 }
