@@ -125,116 +125,117 @@
 <br/><br/>
 
 ## 디렉토리 구조
-📦src
- ┣ 📂apis
- ┃ ┣ 📂dtos
- ┃ ┃ ┣ 📜money.dto.js
- ┃ ┃ ┣ 📜product.dto.js
- ┃ ┃ ┗ 📜rental.dto.js
- ┃ ┣ 📜paymoney.apis.js
- ┃ ┣ 📜product.apis.js
- ┃ ┣ 📜rental.apis.js
- ┃ ┗ 📜review.apis.js
- ┣ 📂components
- ┃ ┣ 📂common
- ┃ ┃ ┣ 📜AppBar.component.jsx
- ┃ ┃ ┣ 📜BottomFullLink.component.jsx
- ┃ ┃ ┣ 📜Br.component.jsx
- ┃ ┃ ┣ 📜Button.component.jsx
- ┃ ┃ ┣ 📜Carousel.component.jsx
- ┃ ┃ ┣ 📜custom-carousel.css
- ┃ ┃ ┣ 📜Errorboundary.component.jsx
- ┃ ┃ ┣ 📜Icon.component.jsx
- ┃ ┃ ┣ 📜Link.component.jsx
- ┃ ┃ ┣ 📜MainContainer.component.jsx
- ┃ ┃ ┣ 📜Modal.component.jsx
- ┃ ┃ ┗ 📜Txt.component.jsx
- ┃ ┣ 📂home
- ┃ ┃ ┣ 📜Carousel.component.jsx
- ┃ ┃ ┣ 📜Category.component.jsx
- ┃ ┃ ┣ 📜Header.component.jsx
- ┃ ┃ ┗ 📜Menu.component.jsx
- ┃ ┣ 📂payment
- ┃ ┃ ┣ 📜AnounceCanPayment.component.jsx
- ┃ ┃ ┣ 📜PayButton.component.jsx
- ┃ ┃ ┣ 📜Payment.component.jsx
- ┃ ┃ ┗ 📜Product.component.jsx
- ┃ ┣ 📂paymoney
- ┃ ┃ ┣ 📜ChargeMoney.component.jsx
- ┃ ┃ ┣ 📜KeyPad.component.jsx
- ┃ ┃ ┣ 📜MoneyHistory.component.jsx
- ┃ ┃ ┗ 📜MyMoney.component.jsx
- ┃ ┣ 📂product
- ┃ ┃ ┣ 📂rentPeriod
- ┃ ┃ ┃ ┣ 📜Calender.component.jsx
- ┃ ┃ ┃ ┗ 📜calender.css
- ┃ ┃ ┣ 📜Company.component.jsx
- ┃ ┃ ┣ 📜Detail.component.jsx
- ┃ ┃ ┣ 📜Item.component.jsx
- ┃ ┃ ┣ 📜List.component.jsx
- ┃ ┃ ┗ 📜ListByCategory.component.jsx
- ┃ ┣ 📂rental
- ┃ ┃ ┣ 📂Item
- ┃ ┃ ┃ ┣ 📜index.component.jsx
- ┃ ┃ ┃ ┣ 📜Rental.component.jsx
- ┃ ┃ ┃ ┣ 📜RentalComplete.component.jsx
- ┃ ┃ ┃ ┗ 📜RentalSchedule.component.jsx
- ┃ ┃ ┗ 📜List.component.jsx
- ┃ ┣ 📂review
- ┃ ┃ ┣ 📜QuickReview.component.jsx
- ┃ ┃ ┣ 📜Review.component.jsx
- ┃ ┃ ┣ 📜Stars.component.jsx
- ┃ ┃ ┗ 📜TextArea.component.jsx
- ┃ ┗ 📂sign
- ┃ ┃ ┣ 📜Information.component.jsx
- ┃ ┃ ┣ 📜Input.component.jsx
- ┃ ┃ ┗ 📜SlidePannel.component.jsx
- ┣ 📂constants
- ┃ ┗ 📜index.js
- ┣ 📂functions
- ┃ ┣ 📜axios.js
- ┃ ┗ 📜rental.js
- ┣ 📂hooks
- ┃ ┣ 📜useProductQuery.jsx
- ┃ ┣ 📜useRentalQuery.jsx
- ┃ ┗ 📜useReviewQuery.jsx
- ┣ 📂mocks
- ┃ ┣ 📂handlers
- ┃ ┃ ┣ 📜category.mocks.js
- ┃ ┃ ┣ 📜index.js
- ┃ ┃ ┣ 📜payment.mocks.js
- ┃ ┃ ┣ 📜product.mocks.js
- ┃ ┃ ┣ 📜rental.mocks.js
- ┃ ┃ ┣ 📜review.mocks.js
- ┃ ┃ ┗ 📜user.mocks.js
- ┃ ┗ 📜browser.js
- ┣ 📂pages
- ┃ ┣ 📂product
- ┃ ┃ ┣ 📜Category.page.jsx
- ┃ ┃ ┣ 📜Payment.page.jsx
- ┃ ┃ ┣ 📜ProductDetail.page.jsx
- ┃ ┃ ┗ 📜ProductRent.page.jsx
- ┃ ┣ 📂sign
- ┃ ┃ ┣ 📜Account.page.jsx
- ┃ ┃ ┣ 📜School.page.jsx
- ┃ ┃ ┣ 📜SchoolCard.page.jsx
- ┃ ┃ ┣ 📜Signin.page.jsx
- ┃ ┃ ┗ 📜Signup.page.jsx
- ┃ ┣ 📜Charge.page.jsx
- ┃ ┣ 📜Home.page.jsx
- ┃ ┣ 📜My.page.jsx
- ┃ ┣ 📜PayMoney.page.jsx
- ┃ ┣ 📜RentalList.page.jsx
- ┃ ┣ 📜Review.page.jsx
- ┃ ┗ 📜Test.page.jsx
- ┣ 📂stores
- ┃ ┣ 📜payment.atom.js
- ┃ ┣ 📜paymoney.atom.js
- ┃ ┣ 📜rent.atom.js
- ┃ ┗ 📜review.atom.js
- ┣ 📜App.jsx
- ┣ 📜index.css
- ┗ 📜main.jsx
+📦 src  
+ ┣ 📂 apis  
+ ┃ ┣ 📂 dtos  
+ ┃ ┃ ┣ 📜 money.dto.js  
+ ┃ ┃ ┣ 📜 product.dto.js  
+ ┃ ┃ ┗ 📜 rental.dto.js  
+ ┃ ┣ 📜 paymoney.apis.js  
+ ┃ ┣ 📜 product.apis.js  
+ ┃ ┣ 📜 rental.apis.js  
+ ┃ ┗ 📜 review.apis.js  
+ ┣ 📂 components  
+ ┃ ┣ 📂 common  
+ ┃ ┃ ┣ 📜 AppBar.component.jsx  
+ ┃ ┃ ┣ 📜 BottomFullLink.component.jsx  
+ ┃ ┃ ┣ 📜 Br.component.jsx  
+ ┃ ┃ ┣ 📜 Button.component.jsx  
+ ┃ ┃ ┣ 📜 Carousel.component.jsx  
+ ┃ ┃ ┣ 📜 custom-carousel.css  
+ ┃ ┃ ┣ 📜 Errorboundary.component.jsx  
+ ┃ ┃ ┣ 📜 Icon.component.jsx  
+ ┃ ┃ ┣ 📜 Link.component.jsx  
+ ┃ ┃ ┣ 📜 MainContainer.component.jsx  
+ ┃ ┃ ┣ 📜 Modal.component.jsx  
+ ┃ ┃ ┗ 📜 Txt.component.jsx  
+ ┃ ┣ 📂 home  
+ ┃ ┃ ┣ 📜 Carousel.component.jsx  
+ ┃ ┃ ┣ 📜 Category.component.jsx  
+ ┃ ┃ ┣ 📜 Header.component.jsx  
+ ┃ ┃ ┗ 📜 Menu.component.jsx  
+ ┃ ┣ 📂 payment  
+ ┃ ┃ ┣ 📜 AnounceCanPayment.component.jsx  
+ ┃ ┃ ┣ 📜 PayButton.component.jsx  
+ ┃ ┃ ┣ 📜 Payment.component.jsx  
+ ┃ ┃ ┗ 📜 Product.component.jsx  
+ ┃ ┣ 📂 paymoney  
+ ┃ ┃ ┣ 📜 ChargeMoney.component.jsx  
+ ┃ ┃ ┣ 📜 KeyPad.component.jsx  
+ ┃ ┃ ┣ 📜 MoneyHistory.component.jsx  
+ ┃ ┃ ┗ 📜 MyMoney.component.jsx  
+ ┃ ┣ 📂 product  
+ ┃ ┃ ┣ 📂 rentPeriod  
+ ┃ ┃ ┃ ┣ 📜 Calender.component.jsx  
+ ┃ ┃ ┃ ┗ 📜 calender.css  
+ ┃ ┃ ┣ 📜 Company.component.jsx  
+ ┃ ┃ ┣ 📜 Detail.component.jsx  
+ ┃ ┃ ┣ 📜 Item.component.jsx  
+ ┃ ┃ ┣ 📜 List.component.jsx  
+ ┃ ┃ ┗ 📜 ListByCategory.component.jsx  
+ ┃ ┣ 📂 rental  
+ ┃ ┃ ┣ 📂 Item  
+ ┃ ┃ ┃ ┣ 📜 index.component.jsx  
+ ┃ ┃ ┃ ┣ 📜 Rental.component.jsx  
+ ┃ ┃ ┃ ┣ 📜 RentalComplete.component.jsx  
+ ┃ ┃ ┃ ┗ 📜 RentalSchedule.component.jsx  
+ ┃ ┃ ┗ 📜 List.component.jsx  
+ ┃ ┣ 📂 review  
+ ┃ ┃ ┣ 📜 QuickReview.component.jsx  
+ ┃ ┃ ┣ 📜 Review.component.jsx  
+ ┃ ┃ ┣ 📜 Stars.component.jsx  
+ ┃ ┃ ┗ 📜 TextArea.component.jsx  
+ ┃ ┗ 📂 sign  
+ ┃ ┃ ┣ 📜 Information.component.jsx  
+ ┃ ┃ ┣ 📜 Input.component.jsx  
+ ┃ ┃ ┗ 📜 SlidePannel.component.jsx  
+ ┣ 📂 constants  
+ ┃ ┗ 📜 index.js  
+ ┣ 📂 functions  
+ ┃ ┣ 📜 axios.js  
+ ┃ ┗ 📜 rental.js  
+ ┣ 📂 hooks  
+ ┃ ┣ 📜 useProductQuery.jsx  
+ ┃ ┣ 📜 useRentalQuery.jsx  
+ ┃ ┗ 📜 useReviewQuery.jsx  
+ ┣ 📂 mocks  
+ ┃ ┣ 📂 handlers  
+ ┃ ┃ ┣ 📜 category.mocks.js  
+ ┃ ┃ ┣ 📜 index.js  
+ ┃ ┃ ┣ 📜 payment.mocks.js  
+ ┃ ┃ ┣ 📜 product.mocks.js  
+ ┃ ┃ ┣ 📜 rental.mocks.js  
+ ┃ ┃ ┣ 📜 review.mocks.js  
+ ┃ ┃ ┗ 📜 user.mocks.js  
+ ┃ ┗ 📜 browser.js  
+ ┣ 📂 pages  
+ ┃ ┣ 📂 product  
+ ┃ ┃ ┣ 📜 Category.page.jsx  
+ ┃ ┃ ┣ 📜 Payment.page.jsx  
+ ┃ ┃ ┣ 📜 ProductDetail.page.jsx  
+ ┃ ┃ ┗ 📜 ProductRent.page.jsx  
+ ┃ ┣ 📂 sign  
+ ┃ ┃ ┣ 📜 Account.page.jsx  
+ ┃ ┃ ┣ 📜 School.page.jsx  
+ ┃ ┃ ┣ 📜 SchoolCard.page.jsx  
+ ┃ ┃ ┣ 📜 Signin.page.jsx  
+ ┃ ┃ ┗ 📜 Signup.page.jsx  
+ ┃ ┣ 📜 Charge.page.jsx  
+ ┃ ┣ 📜 Home.page.jsx  
+ ┃ ┣ 📜 My.page.jsx  
+ ┃ ┣ 📜 PayMoney.page.jsx  
+ ┃ ┣ 📜 RentalList.page.jsx  
+ ┃ ┣ 📜 Review.page.jsx  
+ ┃ ┗ 📜 Test.page.jsx  
+ ┣ 📂 stores  
+ ┃ ┣ 📜 payment.atom.js  
+ ┃ ┣ 📜 paymoney.atom.js  
+ ┃ ┣ 📜 rent.atom.js  
+ ┃ ┗ 📜 review.atom.js  
+ ┣ 📜 App.jsx  
+ ┣ 📜 index.css   
+ ┗ 📜 main.jsx  
+  
 
 ## ☑️ 시작가이드
 파일을 클론 한 후 아래의 명령어를 입력해 프로젝트를 직접 실행 해 볼 수 있습니다.
