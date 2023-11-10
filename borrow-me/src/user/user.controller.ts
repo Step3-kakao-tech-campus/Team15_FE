@@ -76,11 +76,25 @@ export class UsersController {
     }
 
     res["cookie"]("Authentication", accessToken, {
-      // domain: this.configService.get("JWT_LOCAL_PATH"),
-      maxAge: 1000 * 60 * 60 * 24 * 100,
+      domain: this.configService.get("JWT_LOCAL_PATH"),
       path: "/",
       httpOnly: true,
       sameSite: "none",
+      secure: true,
+    });
+    res["cookie"]("Authentication", accessToken, {
+      domain: "capacitor://localhost",
+      path: "/",
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
+    });
+    res["cookie"]("Authentication", accessToken, {
+      domain: "http://localhost",
+      path: "/",
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
     });
 
     return null;
