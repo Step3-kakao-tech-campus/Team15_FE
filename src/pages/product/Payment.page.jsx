@@ -19,11 +19,15 @@ export const PaymentPage = () => {
     <>
       <AppBar to={`/rent-period/${id}`} title="결제하기" br={true} />
       <MainContainer>
-        <div className="flex flex-col h-full justify-between">
+        <div className="flex h-full flex-col justify-between">
           <div>
             <ErrorBoundary>
               <Suspense fallback={<></>}>
                 <PaymoneyProduct id={id} />
+              </Suspense>
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <Suspense fallback={<></>}>
                 <Payment id={id} />
               </Suspense>
             </ErrorBoundary>

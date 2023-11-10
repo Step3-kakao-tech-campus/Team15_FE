@@ -37,7 +37,7 @@ export const ProductItem = ({ data }) => {
         </div>
         <div className="flex w-full justify-between">
           <Txt typography="h6" colors="secondary" className="truncate">
-            {`${koString(data.rentalPrice)} / 일`}
+            {`${koString(data.rentalPrice)} 원 / 일`}
           </Txt>
           <div className="flex items-center gap-1">
             <Icon type="message" size="small" />
