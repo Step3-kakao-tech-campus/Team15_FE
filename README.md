@@ -9,17 +9,17 @@
 🏫 필요한 대여물품을 **학교 내에서** 간편하게 대여
 - 보로미에서는 전공책, 전자기기, 정장 등의 대여물품을 학교 내에서 빠르게 대여할 수 있어요.
 - 원하는 카테고리를 선택하면, 카테고리 별로 상품들을 확인해볼 수 있어요.
-- 대여물품의 정가를 함께 알려주어 더욱 합리적인 선택을 도와요 !
+- 대여물품의 정가를 함께 알려주어 더욱 합리적인 선택을 도와요!
 
 🗓️ 원하는 대여날짜를 **1일 간격**으로 정할 수 있어요
 - 비싼 노트북을 구매하기 전 며칠동안만 사용해보고 싶다면 ?? 대여기간을 하루부터 설정가능하기 때문에 원하는 기간만 대여할 수 있어요.
-- 다른 대여 플랫폼은 최소 한달이던데, 우와 !
+- 다른 대여 플랫폼은 최소 한달이던데, 우와!
  
 ✅ **버튼 한 번**으로 반납 신청도 빠르게 ~
-- 대여 종료일이 되면 [마이페이지]>[대여내역]>['반납하기'] 버튼을 통해 반납 신청을 할 수 있어요 !
+- 대여 종료일이 되면 [마이페이지]>[대여내역]>['반납하기'] 버튼을 통해 반납 신청을 할 수 있어요!
 
 💬 **리뷰를 확인**하고 상품에 대한 다양한 의견도 바로 확인 가능
-- 원하는 상품을 클릭하면, 다른 사람들의 리뷰를 확인할 수 있어요 ~ 참고해서 더 좋은 선택을 해보시는 건 어떨까요 ?
+- 원하는 상품을 클릭하면, 다른 사람들의 리뷰를 확인할 수 있어요! 참고해서 더 좋은 선택을 해보시는 건 어떨까요?
 </br>
 
 ## 🕐 개발기간
@@ -32,10 +32,6 @@
 |:---:|:---:|:---:|
 |[임채승](https://github.com/loopy-lim)|[곽민준](https://github.com/mlnwns)|[소민경](https://github.com/minkonging)|
 
-### BE
-|<img src="https://github.com/geunho00.png"  width="150" height="150"/>|<img src="https://github.com/zxc88kr.png"  width="150" height="150"/>|<img src="https://github.com/C0Zl.png"  width="150" height="150"/>|
-|:---:|:---:|:---:|
-|[김근호](https://github.com/geunho00)|[박찬](https://github.com/zxc88kr)|[이지혜](https://github.com/C0Zl)|
 <br/>
 
 ## 서비스 소개
@@ -49,14 +45,41 @@
 |대여내역 조회 및 리뷰 작성하기|<a href="https://ibb.co/znFRXbn"><img src="https://i.ibb.co/cgwF6tg/image.png" alt="image" border="0"></a>|대여내역을 조회하여 리뷰를 작성할 수 있습니다.|
 <br/>
 
+## 서비스 소개
+<p align="center">
+  <img src="https://i.ibb.co/3cWDNKC/1.png" align="center" width="24%">
+  <img src="https://i.ibb.co/Vvsnrcn/11.png" align="center" width="24%">
+  <img src="https://i.ibb.co/zsyh75L/13.png" align="center" width="24%">
+  <img src="https://i.ibb.co/NpzLkWL/15.png" align="center" width="23.8%">
+</p>
+
+<p align="center">
+  <img src="https://i.ibb.co/8m8b5qM/image.png" align="center" width="23%">
+  <img src="https://i.ibb.co/bXCq5z1/4.png" align="center" width="24%">
+  <img src="https://i.ibb.co/z69RddV/5.png" align="center" width="24.4%">
+  <img src="https://i.ibb.co/tK0ksgp/6.png" align="center" width="24.2%">
+</p>
+
+<p align="center">
+  <img src="https://i.ibb.co/JtYh6bV/9.png" align="center" width="24.2%">
+  <img src="https://i.ibb.co/TTc6htv/10.png" align="center" width="24%">
+  <img src="https://i.ibb.co/vJB0Nf6/2.png" align="center" width="24.4%">
+  <img src="https://i.ibb.co/CbwnKhh/7.png" align="center" width="24.2%">
+</p>
+
 ## 주요 Flow(흐름)
-웹/앱 시작시 보로미 splash 화면이 나오고, 사용자는 로그인(email 및 비밀번호 입력)할 수 있다. 회원이 아니라면 회원가입 및 학교인증 순서를 거쳐 로그인이 가능하다.
-메인화면에서 카테고리나 리스트 혹은 캐러셀을 통해 원하는 물건의 유무를 확인 가능하고, 해당 물품을 누르면 상세 정보 페이지가 떠 상품 대여 가격, 기간, 상품에 대한 스펙, 회사 등에 대한 정보 열람이 가능하다. 하단의 대여하기 버튼을 클릭하면
-대여날짜를 선택할 수 있는 캘린더가 나오고 원하는 대여 날짜 기간을 선택하면 결제하기 버튼이 활성화된다.
-하단의 결제하기 버튼을 누르면 결제 페이지로 이동하여 페이머니 잔액이 대여 금액 이상일때에 결제하기 버튼이 활성화되어 최종 결제가 진행된다.
-대여 내역 페이지에서 대여 해왔던 기록들 및 현재 대여 상태에 대한 조회 및 리뷰 작성이 가능하다.
-검색 탭에서 물품 검색이 가능하다.
-마이페이지에서 페이머니 잔액 및 충전이 가능하다.
+- 웹/앱 시작시 보로미 splash 화면이 나오고
+- 사용자는 로그인(email 및 비밀번호 입력)할 수 있다.
+- 회원이 아니라면 회원가입 및 학교인증 순서를 거쳐 로그인이 가능하다.
+- 메인화면에서 카테고리나 리스트 혹은 캐러셀을 통해 원하는 물건의 유무를 확인 가능하다.
+- 해당 물품을 누르면 상세 정보 페이지가 떠 상품 대여 가격, 기간, 상품에 대한 스펙, 회사 등에 대한 정보 열람이 가능하다.
+- 하단의 대여하기 버튼을 클릭하면 대여날짜를 선택할 수 있는 캘린더가 나온다.
+- 원하는 대여 날짜 기간을 선택하면 결제하기 버튼이 활성화된다.
+- 하단의 결제하기 버튼을 누르면 결제가 진행된다.(페이머니 잔액이 대여 금액 이상일 떄)
+- 페이머니 잔액이 대여 금액보다 작으면 페이머니를 충전하도록 한다.
+- 대여 내역 페이지에서 대여 해왔던 기록들 및 현재 대여 상태에 대한 조회 및 리뷰 작성이 가능하다.
+- 검색 탭에서 물품 검색이 가능하다.
+- 마이페이지에서 페이머니 잔액 및 충전이 가능하다.
 <br/><br/>
 
 ## 15조 기타 링크
