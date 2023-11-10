@@ -17,7 +17,7 @@ RUN npm install --global pnpm
 RUN corepack enable
 RUN pnpm install --frozen-lockfile
 ENV JWT_SECRET_KEY="eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9asfathoht066923h623lk6h263326lk236216og213i6go"
-ENV JWT_LOCAL_PATH = "krampoline.com"
+ENV JWT_LOCAL_PATH="krampoline.com"
 RUN pnpm run build
 RUN pnpm run seed:run
 EXPOSE 3000

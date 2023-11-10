@@ -12,7 +12,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       {isIOS && <div className="notch-ios"></div>}
-      <div className={!isMobile && MOBILE_WIDTH}>
+      <div className={!isMobile ? MOBILE_WIDTH : null}>
         <ErrorBoundary>
           <RouterProvider router={router} />
         </ErrorBoundary>

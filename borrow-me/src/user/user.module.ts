@@ -25,6 +25,7 @@ env.config();
         },
       }),
     }),
+    ConfigModule,
   ],
   exports: [UsersService],
 })

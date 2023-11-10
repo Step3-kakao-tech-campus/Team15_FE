@@ -88,7 +88,7 @@ export class UsersController {
   @UseInterceptors(AuthInterceptor)
   logout(@Res({ passthrough: true }) res: Response) {
     res.cookie("Authentication", "", {
-      domain: "localhost",
+      domain: this.configService.get("JWT_LOCAL_PATH"),
       path: "/",
       httpOnly: true,
     });

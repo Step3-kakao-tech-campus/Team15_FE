@@ -12,25 +12,25 @@ import { koString } from "../../functions/localeString.js";
 export const ProductItem = ({ data }) => {
   return (
     <Link
-      className="py-4 flex gap-4 items-center text-left"
+      className="flex w-full items-center gap-4 py-4 text-left"
       to={`/product/${data.id}`}
     >
-      <div className="min-w-fit h-32 w-32 overflow-hidden">
+      <div className="flex-1 overflow-hidden">
         <img
-          className="aspect-square w-full h-full object-cover"
+          className="aspect-square object-cover"
           src={data.productImagePath[0]}
           alt={data.productName}
         />
       </div>
-      <div className="flex flex-col h-24 justify-between flex-1 min-w-0">
-        <div className="flex flex-col gap-1 w-full">
+      <div className="flex h-24 min-w-0 flex-[2_0_0] flex-col justify-between">
+        <div className="flex w-full flex-col gap-1">
           <Txt typography="h6" className="truncate">
             {data.productName}
           </Txt>
           <Txt
             typography="subtitle"
             colors="secondaryLight"
-            className="font-light truncate"
+            className="truncate font-light"
           >
             {data.location}
           </Txt>

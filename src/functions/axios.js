@@ -19,7 +19,10 @@ https.interceptors.response.use(
     return response.data;
   },
   (error) => {
-    const resDto = error.response.data;
+    const resDto = error?.response?.data;
+    if (resDto) {
+      window.location.href = "/error/404";
+    }
     if (resDto.reason === "login_unauthenticated_user") {
       location.href = "/signin";
     }

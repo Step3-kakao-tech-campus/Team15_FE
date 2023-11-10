@@ -8,7 +8,12 @@ env.config();
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: ["http://localhost:5173", process.env.VITE_FRONT_HOST],
+    origin: [
+      "http://localhost:5173",
+      "capacitor://localhost",
+      "http://localhost",
+      process.env.VITE_FRONT_HOST,
+    ],
     credentials: true,
   });
   app.use(json({ limit: "50mb" }));

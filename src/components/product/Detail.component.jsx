@@ -18,7 +18,7 @@ export const ProductDetail = ({ id }) => {
     img: {
       src,
       alt: `${product.productName}${index}`,
-      className: "w-full object-cover w-full aspect-[4/3]",
+      className: "w-full object-cover w-full aspect-[16/9]",
     },
   }));
 
@@ -43,7 +43,7 @@ export const ProductDetail = ({ id }) => {
         <Txt
           typography="p"
           colors="secondaryLight"
-          className="flex gap-2 items-center my-1"
+          className="my-1 flex items-center gap-2"
         >
           {product.category}
           <div className="h-[2px] w-[2px] rounded-full bg-[#707070]"></div>
