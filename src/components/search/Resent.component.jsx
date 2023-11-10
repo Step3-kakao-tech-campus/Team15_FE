@@ -2,7 +2,7 @@ import { Icon } from "../common/Icon.component";
 import { Txt } from "../common/Txt.component";
 
 const resentKeywords = [
-  "맥푹 프로",
+  "맥북 프로",
   "갤럭시S23",
   "LG 그램 16",
   "에어팟 프로 2",
@@ -11,7 +11,7 @@ const resentKeywords = [
 export const ResentSearch = () => {
   return (
     <div className="py-8">
-      <Txt typography="h4" className="py-2 block">
+      <Txt typography="h4" className="block py-2">
         최근 검색어
       </Txt>
       <div className="flex flex-wrap gap-2">
@@ -19,7 +19,7 @@ export const ResentSearch = () => {
           return (
             <div
               key={keyword}
-              className="flex gap-1 items-center px-2 w-fit border border-black rounded-md"
+              className="flex w-fit items-center gap-1 rounded-md border border-black px-2"
             >
               <button>{keyword}</button>
               <button>
