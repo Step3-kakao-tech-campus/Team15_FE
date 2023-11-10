@@ -19,7 +19,7 @@
 - 대여 종료일이 되면 [마이페이지]>[대여내역]>['반납하기'] 버튼을 통해 반납 신청을 할 수 있어요!
 
 💬 **리뷰를 확인**하고 상품에 대한 다양한 의견도 바로 확인 가능
-- 원하는 상품을 클릭하면, 다른 사람들의 리뷰를 확인할 수 있어요! 참고해서 더 좋은 선택을 해보시는 건 어떨까요?
+- 상품을 클릭하면, 다른 사람들의 리뷰를 확인 할 수 있어요! 참고해서 더 좋은 선택을 해보시는 건 어떨까요?
 </br>
 
 ## 🕐 개발기간
@@ -73,7 +73,7 @@
 
 ## 대여∙결제 페이지 
 - 상세 페이지에서 대여하기 버튼을 클릭하면 대여 날짜를 선택 할 수 있는 페이지로 이동합니다.
-- 대여를 시작할 날짜와 끝낼 날짜를 선택합니다. 대여 기간을 확인하고 결제하기 버튼을 선택해 결제를 진행합니다.
+- 대여를 시작할 날짜와 끝낼 날짜를 선택합니다. 대여 기간을 확인하고 결제하기 버튼을 선택해 결제합니다.
 - 주문 금액보다 보유한 페이머니가 많다면 결제가 정상적으로 이루어집니다.
 - 주문 금액보다 보유한 페이머니가 부족하다면, 페이머니 충전 페이지로 이동합니다.
 
@@ -114,7 +114,7 @@
 - tailwindcss: atom적인 css 기능이 매력적이라고 생각합니다. 개발자 입장에서 html에서 바로 CSS를 쓰는 경험을 제공한다고 생각합니다.
 - react-query: 무한 스크롤이나, 에러헨들링, 캐싱 등 다양한 기능이 매력 포인트라고 생각합니다.
 - react-router-dom: 가장 많이 쓰고 있는 react-router를 이용하여 trouble슈팅에 용이하기 위해 선택하였습니다.
-- capacitor: WEB base기반 APP을 개발하기 위해서는 거의 유일한 선택지라고 생각했습니다.(RN은 학습 비용이 많이 든다고 판단했습니다)
+- capacitor: WEB base기반 APP을 개발하기 위해서는 거의 유일한 선택지라고 생각했습니다.
 - axios: 폭넓은 기능 지원을 사용하기 위해 선택하였습니다.
 - react-calender: 빠르고 가벼운 calender 라이브러리 중 하나입니다. 추후 react-day-picker로 바뀔 수도 있습니다.
 - react-modal: modal창을 적극적으로 활요하기 위해서 사용하였습니다.
@@ -123,6 +123,118 @@
 - classnames: 아무래도 tailwindcss와 섞어서 쓰기에는 classnames는 매우 찰덕 궁합이라고 생각합니다.
 - react-device-detect: APP을 지원하다보니 iOS와 desktop을 판단할 요소가 필요하였습니다.
 <br/><br/>
+
+## 디렉토리 구조
+📦src
+ ┣ 📂apis
+ ┃ ┣ 📂dtos
+ ┃ ┃ ┣ 📜money.dto.js
+ ┃ ┃ ┣ 📜product.dto.js
+ ┃ ┃ ┗ 📜rental.dto.js
+ ┃ ┣ 📜paymoney.apis.js
+ ┃ ┣ 📜product.apis.js
+ ┃ ┣ 📜rental.apis.js
+ ┃ ┗ 📜review.apis.js
+ ┣ 📂components
+ ┃ ┣ 📂common
+ ┃ ┃ ┣ 📜AppBar.component.jsx
+ ┃ ┃ ┣ 📜BottomFullLink.component.jsx
+ ┃ ┃ ┣ 📜Br.component.jsx
+ ┃ ┃ ┣ 📜Button.component.jsx
+ ┃ ┃ ┣ 📜Carousel.component.jsx
+ ┃ ┃ ┣ 📜custom-carousel.css
+ ┃ ┃ ┣ 📜Errorboundary.component.jsx
+ ┃ ┃ ┣ 📜Icon.component.jsx
+ ┃ ┃ ┣ 📜Link.component.jsx
+ ┃ ┃ ┣ 📜MainContainer.component.jsx
+ ┃ ┃ ┣ 📜Modal.component.jsx
+ ┃ ┃ ┗ 📜Txt.component.jsx
+ ┃ ┣ 📂home
+ ┃ ┃ ┣ 📜Carousel.component.jsx
+ ┃ ┃ ┣ 📜Category.component.jsx
+ ┃ ┃ ┣ 📜Header.component.jsx
+ ┃ ┃ ┗ 📜Menu.component.jsx
+ ┃ ┣ 📂payment
+ ┃ ┃ ┣ 📜AnounceCanPayment.component.jsx
+ ┃ ┃ ┣ 📜PayButton.component.jsx
+ ┃ ┃ ┣ 📜Payment.component.jsx
+ ┃ ┃ ┗ 📜Product.component.jsx
+ ┃ ┣ 📂paymoney
+ ┃ ┃ ┣ 📜ChargeMoney.component.jsx
+ ┃ ┃ ┣ 📜KeyPad.component.jsx
+ ┃ ┃ ┣ 📜MoneyHistory.component.jsx
+ ┃ ┃ ┗ 📜MyMoney.component.jsx
+ ┃ ┣ 📂product
+ ┃ ┃ ┣ 📂rentPeriod
+ ┃ ┃ ┃ ┣ 📜Calender.component.jsx
+ ┃ ┃ ┃ ┗ 📜calender.css
+ ┃ ┃ ┣ 📜Company.component.jsx
+ ┃ ┃ ┣ 📜Detail.component.jsx
+ ┃ ┃ ┣ 📜Item.component.jsx
+ ┃ ┃ ┣ 📜List.component.jsx
+ ┃ ┃ ┗ 📜ListByCategory.component.jsx
+ ┃ ┣ 📂rental
+ ┃ ┃ ┣ 📂Item
+ ┃ ┃ ┃ ┣ 📜index.component.jsx
+ ┃ ┃ ┃ ┣ 📜Rental.component.jsx
+ ┃ ┃ ┃ ┣ 📜RentalComplete.component.jsx
+ ┃ ┃ ┃ ┗ 📜RentalSchedule.component.jsx
+ ┃ ┃ ┗ 📜List.component.jsx
+ ┃ ┣ 📂review
+ ┃ ┃ ┣ 📜QuickReview.component.jsx
+ ┃ ┃ ┣ 📜Review.component.jsx
+ ┃ ┃ ┣ 📜Stars.component.jsx
+ ┃ ┃ ┗ 📜TextArea.component.jsx
+ ┃ ┗ 📂sign
+ ┃ ┃ ┣ 📜Information.component.jsx
+ ┃ ┃ ┣ 📜Input.component.jsx
+ ┃ ┃ ┗ 📜SlidePannel.component.jsx
+ ┣ 📂constants
+ ┃ ┗ 📜index.js
+ ┣ 📂functions
+ ┃ ┣ 📜axios.js
+ ┃ ┗ 📜rental.js
+ ┣ 📂hooks
+ ┃ ┣ 📜useProductQuery.jsx
+ ┃ ┣ 📜useRentalQuery.jsx
+ ┃ ┗ 📜useReviewQuery.jsx
+ ┣ 📂mocks
+ ┃ ┣ 📂handlers
+ ┃ ┃ ┣ 📜category.mocks.js
+ ┃ ┃ ┣ 📜index.js
+ ┃ ┃ ┣ 📜payment.mocks.js
+ ┃ ┃ ┣ 📜product.mocks.js
+ ┃ ┃ ┣ 📜rental.mocks.js
+ ┃ ┃ ┣ 📜review.mocks.js
+ ┃ ┃ ┗ 📜user.mocks.js
+ ┃ ┗ 📜browser.js
+ ┣ 📂pages
+ ┃ ┣ 📂product
+ ┃ ┃ ┣ 📜Category.page.jsx
+ ┃ ┃ ┣ 📜Payment.page.jsx
+ ┃ ┃ ┣ 📜ProductDetail.page.jsx
+ ┃ ┃ ┗ 📜ProductRent.page.jsx
+ ┃ ┣ 📂sign
+ ┃ ┃ ┣ 📜Account.page.jsx
+ ┃ ┃ ┣ 📜School.page.jsx
+ ┃ ┃ ┣ 📜SchoolCard.page.jsx
+ ┃ ┃ ┣ 📜Signin.page.jsx
+ ┃ ┃ ┗ 📜Signup.page.jsx
+ ┃ ┣ 📜Charge.page.jsx
+ ┃ ┣ 📜Home.page.jsx
+ ┃ ┣ 📜My.page.jsx
+ ┃ ┣ 📜PayMoney.page.jsx
+ ┃ ┣ 📜RentalList.page.jsx
+ ┃ ┣ 📜Review.page.jsx
+ ┃ ┗ 📜Test.page.jsx
+ ┣ 📂stores
+ ┃ ┣ 📜payment.atom.js
+ ┃ ┣ 📜paymoney.atom.js
+ ┃ ┣ 📜rent.atom.js
+ ┃ ┗ 📜review.atom.js
+ ┣ 📜App.jsx
+ ┣ 📜index.css
+ ┗ 📜main.jsx
 
 ## ☑️ 시작가이드
 파일을 클론 한 후 아래의 명령어를 입력해 프로젝트를 직접 실행 해 볼 수 있습니다.
