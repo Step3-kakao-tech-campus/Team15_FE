@@ -70,6 +70,7 @@ export const ChargeMoney = () => {
           backgroundColor: "transparent",
           display: "flex",
           alignItems: "flex-end",
+          justifyContent: "center",
         }}
         className={classNames(
           "h-fit bg-[#F8F9FA]",
