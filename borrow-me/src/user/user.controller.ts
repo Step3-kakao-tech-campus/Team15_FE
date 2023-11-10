@@ -16,12 +16,16 @@ import { CommonError } from "src/error/Common.error";
 import { AllHttpExceptionFilter } from "src/response/allHttpException.filter";
 import { ResponseInterceptor } from "src/response/response.interceptor";
 import { AuthInterceptor } from "src/response/auth.interceptor";
+import { ConfigService } from "@nestjs/config";
 
 @Controller("api/user")
 @UseFilters(AllHttpExceptionFilter)
 @UseInterceptors(ResponseInterceptor)
 export class UsersController {
-  constructor(private usersService: UsersService) {}
+  constructor(
+    private usersService: UsersService,
+    private configService: ConfigService
+  ) {}
 
   @Post("join")
   async create(@Body() signUpDto: SignUpDto) {
@@ -72,7 +76,7 @@ export class UsersController {
     }
 
     res["cookie"]("Authentication", accessToken, {
-      domain: "localhost",
+      domain: this.configService.get("JWT_LOCAL_PATH"),
       path: "/",
       httpOnly: true,
     });
