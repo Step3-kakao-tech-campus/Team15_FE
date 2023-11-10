@@ -18,7 +18,7 @@ import { ResponseInterceptor } from "src/response/response.interceptor";
 
 @Controller("api/product")
 @UseFilters(AllHttpExceptionFilter)
-@UseInterceptors(ResponseInterceptor)
+@UseInterceptors(AuthInterceptor, ResponseInterceptor)
 export class ProductController {
   constructor(private productService: ProductService) {}
 
@@ -36,7 +36,6 @@ export class ProductController {
   }
 
   @Post(":id/rent")
-  @UseInterceptors(AuthInterceptor)
   async rentProduct(
     @Param("id") id: number,
     @Body() body: RentProductDto,

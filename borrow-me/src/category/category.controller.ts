@@ -9,9 +9,10 @@ import { CategoryService } from "./category.service";
 import { Request } from "express";
 import { ResponseInterceptor } from "src/response/response.interceptor";
 import { AllHttpExceptionFilter } from "src/response/allHttpException.filter";
+import { AuthInterceptor } from "src/response/auth.interceptor";
 
 @UseFilters(AllHttpExceptionFilter)
-@UseInterceptors(ResponseInterceptor)
+@UseInterceptors(AuthInterceptor, ResponseInterceptor)
 @Controller("api/category")
 export class CategoryController {
   constructor(private readonly categoryService: CategoryService) {}
