@@ -20,7 +20,7 @@ export const MyPage = () => {
         </ErrorBoundary>
         <div
           className={classnaems(
-            "absolute h-full bg-gray-100 py-4",
+            "absolute left-0 h-full bg-gray-100 py-4",
             !isMobile ? MOBILE_WIDTH : "left-0 w-full "
           )}
         >
