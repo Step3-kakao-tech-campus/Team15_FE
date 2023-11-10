@@ -15,6 +15,7 @@ COPY --from=build /usr/src/app/dist ./frontend
 RUN npm install --global pnpm
 RUN corepack enable
 RUN pnpm install --frozen-lockfile
+ENV VITE_API_URL=""
 RUN pnpm run build
 RUN pnpm run seed:run
 EXPOSE 3000
