@@ -19,7 +19,7 @@ export const categories = [
 export const users = [
   {
     universityPk: 1,
-    email: "admin@borrowme.kr",
+    email: "admin@kakao.com",
     password: "1234",
     nickname: "admin",
     role: "USER",
