@@ -5,7 +5,7 @@ import { ProductCalculateRentalDto } from "./dtos/product.dto.js";
 
 export const getPaymoney = async () => {
   const payment = await https.get("/payment");
-  if (isAxiosError(payment) && payment.response?.status === 404) {
+  if (isAxiosError(payment) && payment?.response?.status === 404) {
     window.location.href = "/error/404";
   }
 
@@ -14,7 +14,7 @@ export const getPaymoney = async () => {
 
 export const getPaymoneyLog = async () => {
   const paymentLog = await https.get("/payment/log");
-  if (isAxiosError(paymentLog) && paymentLog.response?.status === 404) {
+  if (isAxiosError(paymentLog) && paymentLog?.response?.status === 404) {
     window.location.href = "/error/404";
   }
 
@@ -36,7 +36,7 @@ export const getProductCalculateRental = async (
     startAt,
     endAt,
   });
-  if (isAxiosError(result) && result.response?.status === 404) {
+  if (isAxiosError(result) && result?.response?.status === 404) {
     window.location.href = "/error/404";
   }
   return new ProductCalculateRentalDto(result.response);
@@ -54,7 +54,7 @@ export const createRental = async ({ productId, date: { startAt, endAt } }) => {
     startAt,
     endAt,
   });
-  if (isAxiosError(result) && result.response?.status === 404) {
+  if (isAxiosError(result) && result?.response?.status === 404) {
     window.location.href = "/error/404";
   }
 
@@ -63,7 +63,7 @@ export const createRental = async ({ productId, date: { startAt, endAt } }) => {
 
 export const postChargeMoney = async ({ piece }) => {
   const result = await https.post("/payment/charge", { piece });
-  if (isAxiosError(result) && result.response?.status === 404) {
+  if (isAxiosError(result) && result?.response?.status === 404) {
     window.location.href = "/error/404";
   }
 

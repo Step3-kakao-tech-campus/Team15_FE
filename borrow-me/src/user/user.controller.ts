@@ -103,10 +103,26 @@ export class UsersController {
   @Post("logout")
   @UseInterceptors(AuthInterceptor)
   logout(@Res({ passthrough: true }) res: Response) {
-    res.cookie("Authentication", "", {
+    res["cookie"]("Authentication", "", {
       domain: this.configService.get("JWT_LOCAL_PATH"),
       path: "/",
       httpOnly: true,
+      sameSite: "none",
+      secure: true,
+    });
+    res["cookie"]("Authentication", "", {
+      domain: "capacitor://localhost",
+      path: "/",
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
+    });
+    res["cookie"]("Authentication", "", {
+      domain: "http://localhost",
+      path: "/",
+      httpOnly: true,
+      sameSite: "none",
+      secure: true,
     });
     return null;
   }
