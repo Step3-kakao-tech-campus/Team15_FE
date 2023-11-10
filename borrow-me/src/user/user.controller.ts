@@ -80,6 +80,7 @@ export class UsersController {
       maxAge: 1000 * 60 * 60 * 24 * 100,
       path: "/",
       httpOnly: true,
+      sameSite: "none",
     });
 
     return null;
