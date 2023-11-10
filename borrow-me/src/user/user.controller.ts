@@ -81,6 +81,7 @@ export class UsersController {
   }
 
   @Post("logout")
+  @UseInterceptors(AuthInterceptor)
   logout(@Res({ passthrough: true }) res: Response) {
     res.cookie("Authentication", "", {
       domain: "localhost",

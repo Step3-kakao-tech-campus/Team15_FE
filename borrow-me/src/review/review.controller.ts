@@ -16,13 +16,13 @@ import { ReviewDto } from "./review.dto";
 import { Request } from "express";
 import { UsersService } from "src/user/user.service";
 import { AllHttpExceptionFilter } from "src/response/allHttpException.filter";
-import { AuthInterceptor } from "src/response/auth.interceptor";
 import { ResponseInterceptor } from "src/response/response.interceptor";
 import { CommonError } from "src/error/Common.error";
+import { AuthInterceptor } from "src/response/auth.interceptor";
 
 @Controller("api/review")
 @UseFilters(AllHttpExceptionFilter)
-@UseInterceptors(AuthInterceptor, ResponseInterceptor)
+@UseInterceptors(ResponseInterceptor)
 export class ReviewController {
   constructor(
     private readonly reviewService: ReviewService,
@@ -36,6 +36,7 @@ export class ReviewController {
   }
 
   @Post(":rentalId")
+  @UseInterceptors(AuthInterceptor)
   async createReview(
     @Body() body: ReviewDto,
     @Param("rentalId") rentalId: number,
@@ -54,6 +55,7 @@ export class ReviewController {
   }
 
   @Patch(":reviewId")
+  @UseInterceptors(AuthInterceptor)
   async updateReview(
     @Body() body: ReviewDto,
     @Param("reviewId") reviewId: number
@@ -62,6 +64,7 @@ export class ReviewController {
   }
 
   @Delete(":reviewId")
+  @UseInterceptors(AuthInterceptor)
   async deleteReview(@Param("reviewId") reviewId: number) {
     return await this.reviewService.deleteReview(reviewId);
   }
