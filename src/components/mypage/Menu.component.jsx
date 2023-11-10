@@ -31,7 +31,7 @@ export const MyPageMenu = () => {
           <Link
             to={menu.path}
             className={classnames(
-              "w-full flex justify-between bg-white py-3 border-y-[.5px] items-center",
+              "flex w-full items-center justify-between border-y-[.5px] bg-white py-3",
               BASE_PADDING
             )}
           >

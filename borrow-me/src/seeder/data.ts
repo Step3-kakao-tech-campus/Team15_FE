@@ -144,10 +144,8 @@ export const products = [
   },
 ];
 
-export const coins = [{ userPk: 1, piece: 1_000_000_000_000 }];
-export const coinLogs = [
-  { coinPk: 1, piece: 1_000_000_000_000, coinType: "충전" },
-];
+export const coins = [{ userPk: 1, piece: 1_000_000_000 }];
+export const coinLogs = [{ coinPk: 1, piece: 1_000_000_000, coinType: "충전" }];
 
 export const rentals = [
   {

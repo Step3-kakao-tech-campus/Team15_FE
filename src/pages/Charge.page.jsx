@@ -5,16 +5,26 @@ import { Modal } from "../components/common/Modal.component";
 import { useNavigate } from "react-router-dom";
 import { AppBar } from "../components/common/AppBar.component";
 import { MainContainer } from "../components/common/MainContainer.component";
-import { ChargeMoney } from "../components/paymoney/ChargeMoney.component";
 import { BottomFullLink } from "../components/common/BottomFullLink.component";
 import { Txt } from "../components/common/Txt.component";
 import classnames from "classnames";
 import { isMobile } from "react-device-detect";
 import { BASE_PADDING, MOBILE_WIDTH } from "../constants";
 import { usePostPaymoney } from "../hooks/usePaymonyQuery";
+import { lazy } from "react";
+import { ErrorBoundary } from "../components/common/Errorboundary.component";
+import { Suspense } from "react";
 
 const chargeMoneyString =
   "입금 후 1일 이내에\n페이머니 잔액에 반영될 예정입니다.\n감사합니다 :)";
+
+const ChargeMoney = lazy(() =>
+  import("../components/paymoney/ChargeMoney.component").then(
+    ({ ChargeMoney }) => ({
+      default: ChargeMoney,
+    })
+  )
+);
 
 export const ChargePage = () => {
   const navigate = useNavigate();
@@ -33,8 +43,12 @@ export const ChargePage = () => {
     <>
       <AppBar to="/paymoney" title={"충전"} br={true} />
       <MainContainer>
-        <ChargeMoney />
-        <div className="flex flex-col gap-4 ml-6">
+        <ErrorBoundary>
+          <Suspense fallback={<></>}>
+            <ChargeMoney />
+          </Suspense>
+        </ErrorBoundary>
+        <div className="ml-6 flex flex-col gap-4">
           <Txt typography="h6">무통장 입금 계좌</Txt>
           <Txt>카카오뱅크 1234-5678-02 예금주: 보로미</Txt>
         </div>

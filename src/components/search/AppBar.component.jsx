@@ -10,7 +10,7 @@ export const SearchAppBar = () => {
     <div className="h-14">
       <div
         className={classnames(
-          "fixed left-0 gap-2 flex justify-between items-center pt-4 pb-2 border-b bg-white z-40",
+          "fixed z-40 flex items-center justify-between gap-2 border-b bg-white pb-2 pt-4",
           BASE_PADDING,
           !isMobile ? `${MOBILE_WIDTH}` : "w-full"
         )}

@@ -11,9 +11,9 @@ export const HomeHeader = () => {
     <div className="h-14">
       <div
         className={classnames(
-          "fixed left-0 flex justify-between pt-4 pb-2 border-b bg-white z-40",
+          "fixed z-40 flex justify-between border-b bg-white pb-2 pt-4",
           BASE_PADDING,
-          !isMobile ? `${MOBILE_WIDTH}` : "w-full"
+          !isMobile ? `${MOBILE_WIDTH}` : "left-0 w-full "
         )}
       >
         <div className="flex gap-4">

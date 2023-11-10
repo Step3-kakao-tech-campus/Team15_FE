@@ -53,11 +53,11 @@ export const ChargeMoney = () => {
     <>
       <button
         onClick={onKeyboard}
-        className="bg-[#F1F1F1] my-4 rounded-lg w-full py-4 px-8 flex gap-2 flex-col "
+        className="my-4 flex w-full flex-col gap-2 rounded-lg bg-[#F1F1F1] px-8 py-4 "
       >
-        <Txt className="float-left mr-4 text-gray-500 min-w-fit">충전금액</Txt>
+        <Txt className="float-left mr-4 min-w-fit text-gray-500">충전금액</Txt>
         <input
-          className="w-full text-4xl bg-transparent"
+          className="w-full bg-transparent text-4xl"
           type="text"
           value={inputValue}
           readOnly
@@ -77,7 +77,7 @@ export const ChargeMoney = () => {
           BASE_PADDING
         )}
       >
-        <div className="grid grid-cols-3 mb-20 text-center">
+        <div className="mb-20 grid grid-cols-3 text-center">
           {keypadPositions.map((keypad, index) => (
             <button
               className="flex items-center justify-center py-6"

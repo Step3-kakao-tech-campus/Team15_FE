@@ -12,10 +12,10 @@ import {
  */
 export const Br = ({ className }) => {
   return (
-    <div className={classnames("h-[1px] relative w-full", className)}>
+    <div className={classnames("relative h-[1px]", className)}>
       <span
         className={classnames(
-          "absolute h-[1px] bg-[#D4D4D4] w-[calc(100%+3rem)]",
+          "absolute h-[1px] w-[calc(100%+3rem)] bg-[#D4D4D4]",
           BASE_LEFT_PADDING_MINUS,
           !isMobile ? `${MOBILE_WIDTH}` : "w-[calc(100%+3rem)]"
         )}

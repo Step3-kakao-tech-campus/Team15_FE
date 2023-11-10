@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "../router/index.jsx";
 import { MOBILE_WIDTH } from "./constants/index.js";
 import { ErrorBoundary } from "./components/common/Errorboundary.component.jsx";
+import classnames from "classnames";
 
 const queryClient = new QueryClient();
 
@@ -12,10 +13,24 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       {isIOS && <div className="notch-ios"></div>}
-      <div className={!isMobile ? MOBILE_WIDTH : null}>
-        <ErrorBoundary>
-          <RouterProvider router={router} />
-        </ErrorBoundary>
+      {!isMobile && (
+        <div className="absolute -z-50 h-screen w-screen bg-[#62AB0540]"></div>
+      )}
+      <div
+        className={classnames(
+          !isMobile && "flex w-screen items-center justify-center"
+        )}
+      >
+        <div
+          className={classnames(
+            "relative",
+            !isMobile ? MOBILE_WIDTH : "w-full"
+          )}
+        >
+          <ErrorBoundary>
+            <RouterProvider router={router} />
+          </ErrorBoundary>
+        </div>
       </div>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

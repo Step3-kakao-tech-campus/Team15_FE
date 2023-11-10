@@ -71,7 +71,7 @@ const BaseModal = ({
       onRequestClose={onRequestClose}
       style={{ overlay }}
       className={classnames(
-        "py-4 px-8 rounded-md border bg-[#F8F8F8] relative text-center w-fit h-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+        "relative left-1/2 top-1/2 h-fit w-fit -translate-x-1/2 -translate-y-1/2 rounded-md border bg-[#F8F8F8] px-8 py-4 text-center",
         className
       )}
     >
@@ -90,7 +90,7 @@ const BaseModal = ({
 const AlertModal = ({ children, isOpen, onRequestClose, onClose }) => (
   <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
     <div className="my-2 text-center transition-all">{children}</div>
-    <Button size="small" className="text-sm w-36" onClick={onClose}>
+    <Button size="small" className="w-36 text-sm" onClick={onClose}>
       확인
     </Button>
   </Modal>

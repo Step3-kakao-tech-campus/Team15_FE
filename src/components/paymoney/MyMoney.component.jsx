@@ -19,14 +19,14 @@ export const MyMoney = () => {
 
   return (
     <>
-      <div className="bg-[#FCFCFE] py-4 border broder-[#F1F1F1] rounded-2xl flex justify-between items-center">
-        <Txt typography="h5" className="px-6">
+      <div className="broder-[#F1F1F1] flex items-center justify-between rounded-2xl border bg-[#FCFCFE] p-4">
+        <div className="flex-1">
           <Txt typography="subtitle" className="block font-normal">
             나의 페이머니
           </Txt>
-          {koString(payment.piece)}원
-        </Txt>
-        <div className="flex gap-4 items-center px-6">
+          <Txt typography="h5">{koString(payment.piece)}원</Txt>
+        </div>
+        <div className="flex min-w-fit items-center gap-4">
           <div className="w-full">
             <Button
               size="small"
@@ -45,7 +45,7 @@ export const MyMoney = () => {
           onClose={onModalClose}
           onRequestClose={onModalClose}
         >
-          <div className="flex justify-center flex-col  pb-4">
+          <div className="flex flex-col justify-center  pb-4">
             {withdraowAlertString.split("\n").map((line, index) => (
               <Txt key={index} className="text-center">
                 {line}

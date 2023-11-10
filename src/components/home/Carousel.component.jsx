@@ -34,7 +34,7 @@ export const HomeCarousel = () => {
 
   return (
     <>
-      <div onClick={() => setOnMoeal(true)}>
+      <div className="mt-6" onClick={() => setOnMoeal(true)}>
         <Carousel className="z-0" data={carouselData} />
       </div>
       <Modal.Alert

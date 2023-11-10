@@ -14,7 +14,7 @@ export const AppBar = ({ to, title, br = false }) => {
   return (
     <nav>
       <Link
-        className="px-4 pt-4 pb-3 flex justify-between items-center"
+        className="flex items-center justify-between bg-white px-4 pb-3 pt-4"
         to={to}
       >
         <Icon type="back" />
@@ -23,7 +23,7 @@ export const AppBar = ({ to, title, br = false }) => {
         </div>
         <div className="h-8 w-8"></div>
       </Link>
-      {br && <Br className="w-[calc(100%-1.5rem)]" />}
+      {br && <Br className="ml-6 w-[calc(100%-3rem)]" />}
     </nav>
   );
 };

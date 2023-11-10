@@ -8,7 +8,7 @@ import { BASE_PADDING } from "../../constants/index.js";
  *  hasBottomFullLink?: boolean
  * }}
  */
-export const MainContainer = ({ children, hasBottomFullLink = true }) => {
+export const MainContainer = ({ children, hasBottomFullLink = false }) => {
   return (
     <main
       aria-label="main"
