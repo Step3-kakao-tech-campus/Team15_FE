@@ -4,6 +4,14 @@
 
 **대학생을 위한 B2C 기반 대여 서비스 웹/앱**
 
+## 🔗 배포 링크
+
+배포중인 인스턴스는 다음과 같이 있습니다.
+
+1. FE: [https://kad4a5a7c2c57a.user-app.krampoline.com](https://kad4a5a7c2c57a.user-app.krampoline.com/)
+2. BE: [https://kd232444c2db9a.user-app.krampoline.com](https://kd232444c2db9a.user-app.krampoline.com/)
+   </br>
+
 ## 💡 보로미(BorrowMe)란?
 
 > 대학생들을 위한 쉽고 빠른 대여 서비스, Borrow Me
