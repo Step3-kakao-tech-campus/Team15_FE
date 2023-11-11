@@ -1,5 +1,7 @@
 # 전남대 15조 [빌리지]🏘️ _ 보로미(BorrowMe)
-대학생을 위한 B2C 기반 대여 서비스 웹/앱
+<img src="https://i.postimg.cc/GhPt3vVh/001-1.png"><br/>
+
+**대학생을 위한 B2C 기반 대여 서비스 웹/앱**
 <br/><br/>
 
 
@@ -35,28 +37,37 @@
 <br/>
 
 ## 🧾 주요 화면 소개
-<p align="center">
+<p align="left">
+  <img width="252" alt="image" src="https://github.com/Step3-kakao-tech-campus/Team15_FE/assets/102536227/5d519c51-2984-45fb-99c7-f0b8336140db" align="center" width="10%">
+</p>
+
+### 0️⃣ 스플래시 화면
+- 앱/웹 실행시 초기화면입니다.
+
+<br/><br/>
+
+<p align="left">
   <img src="https://i.ibb.co/3cWDNKC/1.png" align="center" width="24%">
   <img src="https://i.ibb.co/Vvsnrcn/11.png" align="center" width="24%">
   <img src="https://i.ibb.co/zsyh75L/13.png" align="center" width="24%">
   <img src="https://i.ibb.co/NpzLkWL/15.png" align="center" width="23.8%">
 </p>
 
-## 회원가입, 로그인 페이지  
+### 1️⃣ 회원가입, 로그인 페이지  
 - 로그인이 되어 있지 않다면, 로그인을 진행합니다. 계정이 없으면 회원가입 페이지로 이동합니다.
 - 회원가입 페이지에서는 이름과, 이메일, 비밀번호, 학교, 학생증 이미지를 등록합니다.
 - 이름은 2글자 이상 10글자 이하로만 설정 가능하며, 비밀번호는 영어와 숫자, 특수문자를 포함한 8글자 이상으로만 설정 가능합니다.
 - 전남대와 부산대를 대상으로 서비스가 개발되어, 현재는 전남대와 부산대만 선택 가능합니다.
 - 학생증 등록 페이지에서는 카메라 아이콘을 눌러 사진 촬영이 가능합니다. 
 
-  <br/>
+  <br/><br/>
   
 <p align="left">
   <img src="https://i.ibb.co/8m8b5qM/image.png" align="center" width="29.4%">
   <img src="https://i.ibb.co/bXCq5z1/4.png" align="center" width="30.6%">
 </p>
 
-## 메인화면, 상세 페이지
+### 2️⃣ 메인화면, 상세 페이지
 - 메인화면 좌측 상단의 메뉴 버튼을 클릭하면, 마이페이지, 대여내역으로 이동하는 버튼이 보여집니다.
 - 메인화면에는 배너 이미지가 캐러셀로 보여집니다.
 - 메인화면의 배너 아래에는 카테고리가 있는데, IT 카테고리를 클릭하면 현재로서는 노트북 목록이 보입니다.
@@ -64,50 +75,57 @@
 - 상품을 클릭하면 상세 페이지로 이동합니다. 등록된 이미지가 캐러셀 형식으로 확인 가능합니다.
 - 상세페이지에서는 작성된 리뷰를 확인 할 수 있고, 대여하기 버튼을 클릭해 대여 할 수 있습니다.
 
-  <br/>
+  <br/><br/>
   
 <p align="left">
   <img src="https://i.ibb.co/z69RddV/5.png" align="center" width="30.1%">
   <img src="https://i.ibb.co/tK0ksgp/6.png" align="center" width="29.9%">
 </p>
 
-## 대여∙결제 페이지 
+### 3️⃣ 대여∙결제 페이지 
 - 상세 페이지에서 대여하기 버튼을 클릭하면 대여 날짜를 선택 할 수 있는 페이지로 이동합니다.
 - 대여를 시작할 날짜와 끝낼 날짜를 선택합니다. 대여 기간을 확인하고 결제하기 버튼을 선택해 결제합니다.
 - 주문 금액보다 보유한 페이머니가 많다면 결제가 정상적으로 이루어집니다.
 - 주문 금액보다 보유한 페이머니가 부족하다면, 페이머니 충전 페이지로 이동합니다.
 
-  <br/>
+  <br/><br/>
   
 <p align="left">
   <img src="https://i.ibb.co/JtYh6bV/9.png" align="center" width="30.2%">
   <img src="https://i.ibb.co/TTc6htv/10.png" align="center" width="29.8%">
 </p>
 
-## 검색∙충전 페이지
+### 4️⃣ 검색∙충전 페이지
 - 메인화면에서 검색 버튼을 누르면 검색 페이지로 이동하는데, 해당 페이지에서 갤럭시를 검색 한 결과입니다.
 - 검색한 키워드에 관련된 상품들이 나열됩니다.
 - 페이머니 충전 페이지에서는 출금과 충전이 가능합니다.
 - 페이머니 출금, 충전 내역을 확인 할 수 있습니다.
 
-  <br/>
+  <br/><br/>
   
 <p align="left">
   <img src="https://i.ibb.co/vJB0Nf6/2.png" align="center" width="30.1%">
   <img src="https://i.ibb.co/CbwnKhh/7.png" align="center" width="29.9%">
 </p>
 
-## 대여내역∙리뷰 페이지
+### 5️⃣ 대여내역∙리뷰 페이지
 - 메인화면에서 좌측 상단의 메뉴 버튼을 통해 이동한 대여내역 페이지입니다.
 - 대여하고 있는 품목과 반납까지 남은 기간, 대여 했던 품목 등을 확인 할 수 있습니다.
 - 대여내역 페이지에서 이미 반납 한 물품의 경우 리뷰를 작성 할 수 있습니다.
 - 리뷰 페이지에서는 별점을 선택 할 수 있고, 미리 주어진 문구들을 클릭해 손 쉽게 리뷰를 등록 할 수 있습니다.
 
-  <br/>
+  <br/><br/>
 
+## 🧐 주안점을 두고 개발한 기능
+- 코드의 재사용성을 높이기 위해 만들 수 있는 거의 모든 컴포넌트들을 'src/components'에 따로 생성을 해두고,
+  필요한 컴포넌트들을 가져다 쓰는 식으로 구현하였습니다! 😎
+- 사용자가 **최소한의 경로로 최대한 간편하게 대여** 할수있도록 고민하여 불필요한 로직들을 없앴습니다!
+  
+ <br/><br/>
+ 
 ## ⚙️ 기술 stack
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699624370376?alt=media&token=c29b1847-20e1-4610-8479-40d0b0d37290)](https://github.com/msdio/stackticon)
-- react: 아무래도 협력하기에는 가장 적합하다고 생각합니다.
+- react: 협업하기에 가장 적합하다고 생각합니다.
 - vite: DX경험이 훌륭하여 Vite를 선택하였습니다.
 - pnpm: 느린 npm install대신, 저장공간을 save하고, 폭 넓은 명령어를 지원하는 pnpm을 사용하였습니다.
 - jotai: 학습곡선이 매우 짧고, global store을 많이 사용할것 같지 않아서 atom스토어 기반인 jotai를 선택했습니다.
@@ -122,9 +140,10 @@
 - react-icons: 잘 정리된 레퍼런스와, 폭 넓은 아이콘의 개수가 매력적이라 선택했습니다.
 - classnames: 아무래도 tailwindcss와 섞어서 쓰기에는 classnames는 매우 찰덕 궁합이라고 생각합니다.
 - react-device-detect: APP을 지원하다보니 iOS와 desktop을 판단할 요소가 필요하였습니다.
+  
 <br/><br/>
 
-## 디렉토리 구조
+## 📂 디렉토리 구조
 📦 src  
  ┣ 📂 apis  
  ┃ ┣ 📂 dtos  
@@ -235,16 +254,17 @@
  ┣ 📜 App.jsx  
  ┣ 📜 index.css   
  ┗ 📜 main.jsx  
-  
 
-## ☑️ 시작가이드
+  <br/><br/>
+
+## ⭐️ 시작가이드
 파일을 클론 한 후 아래의 명령어를 입력해 프로젝트를 직접 실행 해 볼 수 있습니다.
 ```
 pnpm install
 pnpm dev
 ```
 
-## ☑️ capatitor 실행과 관련하여
+## ⭐️ capatitor 실행과 관련하여
 
 ```sh
 ionic cap run ios -l --external
