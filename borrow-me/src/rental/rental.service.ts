@@ -24,9 +24,29 @@ export class RentalService {
     const user = await this.userRepository.findOne({
       where: { email: userDto.email },
     });
-    const rentals = await this.rentalRepository.find({
+    let rentals = await this.rentalRepository.find({
       where: { userPk: user.userPk },
     });
+    await Promise.all(
+      rentals
+        .filter((rental) => {
+          rental.status === RENTAL_TYPE.RENT ||
+            rental.status === RENTAL_TYPE.BOOKING;
+        })
+        .map(async (rental) => {
+          if (new Date(rental.startAt) > new Date()) {
+            rental.status = RENTAL_TYPE.BOOKING;
+            await this.rentalRepository.save(rental);
+          } else if (new Date(rental.endAt) < new Date()) {
+            rental.status = RENTAL_TYPE.RENT;
+            await this.rentalRepository.save(rental);
+          }
+        })
+    );
+    rentals = await this.rentalRepository.find({
+      where: { userPk: user.userPk },
+    });
+
     const products = await Promise.all(
       rentals.map(
         async (rental) =>
