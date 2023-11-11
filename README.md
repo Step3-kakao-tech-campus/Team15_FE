@@ -1,5 +1,6 @@
 # 전남대 15조 [빌리지]🏘️ _ 보로미(BorrowMe)
-<img width="133" alt="image" src="https://github.com/Step3-kakao-tech-campus/Team15_FE/assets/102536227/884f1de5-0ccb-4616-962d-4d54c8798f21"><br/>
+<img src="https://i.postimg.cc/GhPt3vVh/001-1.png"><br/>
+
 **대학생을 위한 B2C 기반 대여 서비스 웹/앱**
 <br/><br/>
 
@@ -45,7 +46,7 @@
 
 <br/><br/>
 
-<p align="left"
+<p align="left">
   <img src="https://i.ibb.co/3cWDNKC/1.png" align="center" width="24%">
   <img src="https://i.ibb.co/Vvsnrcn/11.png" align="center" width="24%">
   <img src="https://i.ibb.co/zsyh75L/13.png" align="center" width="24%">
