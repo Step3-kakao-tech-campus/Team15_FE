@@ -5,12 +5,13 @@
 **대학생을 위한 B2C 기반 대여 서비스 웹/앱**
 <br/><br/>
 
-## 배포 링크
+## 🔗 배포 링크
 
 배포중인 인스턴스는 다음과 같이 있습니다.
 
 1. FE: [https://kad4a5a7c2c57a.user-app.krampoline.com](https://kad4a5a7c2c57a.user-app.krampoline.com/)
 2. BE: [https://kd232444c2db9a.user-app.krampoline.com](https://kd232444c2db9a.user-app.krampoline.com/)
+</br>
 
 ## 💡 보로미(BorrowMe)란?
 
@@ -34,7 +35,7 @@
 💬 **리뷰를 확인**하고 상품에 대한 다양한 의견도 바로 확인 가능
 
 - 상품을 클릭하면, 다른 사람들의 리뷰를 확인 할 수 있어요! 참고해서 더 좋은 선택을 해보시는 건 어떨까요?
-  </br>
+  </br></br>
 
 ## 🕐 개발기간
 
