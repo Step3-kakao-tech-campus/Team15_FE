@@ -5,10 +5,10 @@ import { Button } from "../../components/common/Button.component";
 export const ErrorPage = () => {
   const { id } = useParams();
   return (
-    <div className="flex flex-col w-screen h-screen justify-center items-center">
+    <div className="flex h-screen flex-col items-center justify-center">
       <img src={"https://http.cat/" + id ?? "404"} alt={id ?? "404"} />
       <Link to={"/"} className="py-4">
-        <Button className="py-2 px-4">HOME</Button>
+        <Button className="px-4 py-2">HOME</Button>
       </Link>
     </div>
   );
