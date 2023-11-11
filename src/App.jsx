@@ -11,29 +11,29 @@ const queryClient = new QueryClient();
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      {isIOS && <div className="notch-ios"></div>}
-      {!isMobile && (
-        <div className="absolute -z-50 h-screen w-screen bg-[#62AB0540]"></div>
-      )}
-      <div
-        className={classnames(
-          !isMobile && "flex w-screen items-center justify-center"
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        {isIOS && <div className="notch-ios"></div>}
+        {!isMobile && (
+          <div className="absolute -z-50 h-screen w-screen bg-[#62AB0540]"></div>
         )}
-      >
         <div
           className={classnames(
-            "relative",
-            !isMobile ? MOBILE_WIDTH : "w-full"
+            !isMobile && "flex w-screen items-center justify-center"
           )}
         >
-          <ErrorBoundary>
+          <div
+            className={classnames(
+              "relative",
+              !isMobile ? MOBILE_WIDTH : "w-full"
+            )}
+          >
             <RouterProvider router={router} />
-          </ErrorBoundary>
+          </div>
         </div>
-      </div>
-      <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+        <ReactQueryDevtools initialIsOpen={false} />
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 }
 
