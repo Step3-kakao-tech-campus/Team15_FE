@@ -22,17 +22,21 @@ https.interceptors.response.use(
     const resDto = error?.response?.data;
     if (resDto) {
       window.location.href = "/error/404";
+      return;
     }
     if (resDto.reason === "login_unauthenticated_user") {
       alert("로그인이 필요합니다.");
       location.href = "/signin";
+      return;
     }
     if (error.response.status >= 500) {
       window.location.href = "/error/500";
+      return;
     }
     if (error.response.status >= 404) {
       alert("잘못된 접근입니다.");
       window.location.href = "/error/404";
+      return;
     }
     return Promise.reject(error.response.data);
   }

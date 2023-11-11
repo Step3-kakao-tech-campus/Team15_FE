@@ -1,5 +1,6 @@
 import { useGetAllReviews } from "../../hooks/useReviewQuery";
 import { Br } from "../common/Br.component";
+import { Icon } from "../common/Icon.component";
 import { Txt } from "../common/Txt.component";
 
 export const ProductReviews = ({ productId }) => {
@@ -15,16 +16,29 @@ export const ProductReviews = ({ productId }) => {
           아직 등록된 리뷰가 없습니다.
         </Txt>
       )}
-      <div className="flex flex-col gap-4 pb-12 divide-y">
+      <div className="flex flex-col gap-4 divide-y pb-12">
         {reviews.map((review, index) => (
           <div key={index} className="flex gap-4 pt-4">
             <img
-              className="object-cover w-12 h-12 rounded-full"
+              className="h-12 w-12 rounded-full object-cover"
               src={review.idCardImagePath}
               alt={review.nickname}
             />
-            <div className="flex flex-col gap-4">
-              <Txt typography="h5">{review.nickname}</Txt>
+            <div className="flex w-full flex-col gap-4">
+              <div className="flex w-full justify-between">
+                <Txt typography="h5" className="flex-1">
+                  {review.nickname}
+                </Txt>
+                <span className="flex">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Icon
+                      key={index}
+                      type={review.star > index ? "fillStar" : "star"}
+                      className="fill-[#62AB05]"
+                    ></Icon>
+                  ))}
+                </span>
+              </div>
               <Txt>{review.content}</Txt>
             </div>
           </div>
