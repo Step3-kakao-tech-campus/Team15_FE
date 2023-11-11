@@ -20,6 +20,23 @@ https.interceptors.response.use(
   },
   (error) => {
     const resDto = error?.response?.data;
+    if (error.response.status >= 500) {
+      window.location.href = "/error/" + error.response.status;
+      return;
+    }
+    if (error.response.status == 401) {
+      window.location.href = "singin";
+      return;
+    }
+    if (error.response.status >= 400) {
+      window.location.href = "/error/" + error.response.status;
+      return;
+    }
+    if (error.response.status >= 404) {
+      alert("잘못된 접근입니다.");
+      window.location.href = "/error/404";
+      return;
+    }
     if (resDto) {
       window.location.href = "/error/404";
       return;
@@ -29,16 +46,8 @@ https.interceptors.response.use(
       location.href = "/signin";
       return;
     }
-    if (error.response.status >= 500) {
-      window.location.href = "/error/500";
-      return;
-    }
-    if (error.response.status >= 404) {
-      alert("잘못된 접근입니다.");
-      window.location.href = "/error/404";
-      return;
-    }
-    return Promise.reject(error.response.data);
+
+    return error.response.data;
   }
 );
 
