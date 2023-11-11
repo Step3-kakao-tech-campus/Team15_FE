@@ -1,4 +1,4 @@
-import { Injectable, Logger } from "@nestjs/common";
+import { Injectable } from "@nestjs/common";
 import { SignInDto, SignUpDto, UserDto } from "./user.dto";
 import { InjectRepository } from "@nestjs/typeorm";
 import { User } from "./user.eneity";
@@ -30,12 +30,10 @@ export class UsersService {
       universityPk,
       role: "USER",
     });
-    await this.coinRepository.save({
+    this.coinRepository.save({
       userPk: user.userPk,
-      coin: 0,
+      piece: 0,
     });
-
-    return !!user;
   }
 
   async isSameEmail(email: string) {

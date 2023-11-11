@@ -81,6 +81,7 @@ export const ChargeMoney = () => {
         <div className="mb-20 grid grid-cols-3 text-center">
           {keypadPositions.map((keypad, index) => (
             <button
+              key={index}
               className="flex items-center justify-center py-6"
               onClick={() => onkeypadClick(keypad)}
             >

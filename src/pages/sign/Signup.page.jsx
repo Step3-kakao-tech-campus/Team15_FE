@@ -31,33 +31,36 @@ export const SignupPage = () => {
   };
 
   return (
-    <MainContainer>
-      <div className="mt-20">
-        <SlidePannels maxLengh={3} selectedIndex={0} />
-      </div>
-      <div className="flex flex-col items-center">
-        <SignInformation title={`당신을 어떤 이름으로\n부르면 좋을까요`} />
-        <div className="flex flex-col w-full items-center">
-          <div className="w-3/4">
-            <Input
-              key={"name"}
-              className="text-center text-2xl"
-              value={name}
-              onChange={handleNameChange}
-              maxLength={10}
-              onKeyDown={onEnterClick}
-            />
-          </div>
+    <>
+      <div className="h-20 bg-white"></div>
+      <MainContainer>
+        <div className="mt-20">
+          <SlidePannels maxLengh={3} selectedIndex={0} />
         </div>
-        <Txt typography="subtitle" colors="secondaryLight" className="my-1">
-          2글자에서 10글자 이내 (특수문자 사용 불가)
-        </Txt>
-      </div>
-      <BottomFullLink
-        title="다음으로"
-        to={`/signup/account`}
-        isActive={canNext}
-      />
-    </MainContainer>
+        <div className="flex flex-col items-center">
+          <SignInformation title={`당신을 어떤 이름으로\n부르면 좋을까요`} />
+          <div className="flex w-full flex-col items-center">
+            <div className="w-3/4">
+              <Input
+                key={"name"}
+                className="text-center text-2xl"
+                value={name}
+                onChange={handleNameChange}
+                maxLength={10}
+                onKeyDown={onEnterClick}
+              />
+            </div>
+          </div>
+          <Txt typography="subtitle" colors="secondaryLight" className="my-1">
+            2글자에서 10글자 이내 (특수문자 사용 불가)
+          </Txt>
+        </div>
+        <BottomFullLink
+          title="다음으로"
+          to={`/signup/account`}
+          isActive={canNext}
+        />
+      </MainContainer>
+    </>
   );
 };

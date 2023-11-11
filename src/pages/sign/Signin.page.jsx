@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { isValidEmail } from "../../functions/validator.js";
 import { Txt } from "../../components/common/Txt.component.jsx";
+import { AppBar } from "../../components/common/AppBar.component.jsx";
 
 export const SigninPage = () => {
   const [email, setEmail] = useState("");
@@ -33,45 +34,48 @@ export const SigninPage = () => {
   };
 
   return (
-    <MainContainer>
-      <Link to={"/"} className="flex justify-center items-center">
-        <img src="/images/logo.png" alt="app logo" className="w-fit" />
-      </Link>
-      <form
-        className="flex flex-col justify-center items-center"
-        onSubmit={onSignIn}
-      >
-        <div className="w-3/4">
-          <Input
-            className="text-lg"
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            label="Email"
-          />
-        </div>
-        <div className="w-3/4">
-          <Input
-            className="text-lg"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            label="Password"
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                onSignIn(e);
-              }
-            }}
-          />
-        </div>
-        <Txt colors="secondary">
-          회원이 아니신가요?{" "}
-          <Link to={"/signup"}>
-            <Txt colors="secondaryLight">회원가입</Txt>
-          </Link>
-        </Txt>
-      </form>
-      <BottomFullLink title="로그인" onClick={onSignIn} />
-    </MainContainer>
+    <>
+      <div className="h-20 bg-white"></div>
+      <MainContainer>
+        <Link to={"/"} className="flex items-center justify-center">
+          <img src="/images/logo.png" alt="app logo" className="w-fit" />
+        </Link>
+        <form
+          className="flex flex-col items-center justify-center"
+          onSubmit={onSignIn}
+        >
+          <div className="w-3/4">
+            <Input
+              className="text-lg"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              label="Email"
+            />
+          </div>
+          <div className="w-3/4">
+            <Input
+              className="text-lg"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              label="Password"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  onSignIn(e);
+                }
+              }}
+            />
+          </div>
+          <Txt colors="secondary">
+            회원이 아니신가요?{" "}
+            <Link to={"/signup"}>
+              <Txt colors="secondaryLight">회원가입</Txt>
+            </Link>
+          </Txt>
+        </form>
+        <BottomFullLink title="로그인" onClick={onSignIn} />
+      </MainContainer>
+    </>
   );
 };

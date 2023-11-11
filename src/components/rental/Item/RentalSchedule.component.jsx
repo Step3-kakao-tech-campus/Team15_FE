@@ -22,10 +22,10 @@ export const ItemRentalSchedule = ({ data }) => {
         </div>
       </div>
       <div className="flex gap-4">
-        <div className="flex-1 object-cover aspect-square">
-          <img src={data.productImagePath[0]} alt={data.productName} />
+        <div className="aspect-square h-36 w-36 flex-1 object-cover">
+          <img src={data.productImagePath} alt={data.productName} />
         </div>
-        <div className="flex flex-col gap-2 flex-[4_0_0] min-w-max">
+        <div className="flex flex-[4_0_0] flex-col gap-2">
           <div className="flex flex-col">
             <Txt typography="h6">{data.productName}</Txt>
           </div>
@@ -33,7 +33,7 @@ export const ItemRentalSchedule = ({ data }) => {
           <div className="flex gap-4">
             <Link className="flex-1">
               <Button size="small" color="white">
-                재대여
+                취소하기
               </Button>
             </Link>
             <div className="flex-1"></div>

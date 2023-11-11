@@ -25,7 +25,7 @@ export const ReviewPage = () => {
 
   const onReviewSubmit = () => {
     setIsModalOpen(true);
-    mutationReview({content: text, rentalId, star: score});
+    mutationReview({ content: text, rentalId, star: score });
     setText("");
     setScore(0);
   };
@@ -33,7 +33,7 @@ export const ReviewPage = () => {
   return (
     <>
       <AppBar to="/" />
-      <MainContainer hasBottomFullLink={true}>
+      <MainContainer>
         <Review />
         <BottomFullLink
           title="리뷰 남기기"

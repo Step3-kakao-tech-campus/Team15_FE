@@ -17,28 +17,30 @@ export const SchoolPage = () => {
   }, []);
 
   return (
-    <MainContainer>
-      <div className="mt-20">
-        <SlidePannels maxLengh={3} selectedIndex={2} />
-      </div>
+    <>
+      <div className="h-20 bg-white"></div>
+      <MainContainer>
+        <div className="mt-20">
+          <SlidePannels maxLengh={3} selectedIndex={2} />
+        </div>
 
-      <div className="flex flex-col items-center">
-        <SignInformation title={`당신의 학교를\n알고 싶어요`} />
-        <select
-          className="text-2xl"
-          onSelect={(e) => {
-            setUniversity(e.target.value);
-          }}
-        >
-          {universities.map((university) => (
-            <option key={university} value={university}>
-              {university}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <BottomFullLink title="다음으로" to={`/signup/schoolcard`} />
-    </MainContainer>
+        <div className="flex flex-col items-center">
+          <SignInformation title={`당신의 학교를\n알고 싶어요`} />
+          <select
+            className="text-2xl"
+            onSelect={(e) => {
+              setUniversity(e.target.value);
+            }}
+          >
+            {universities.map((university) => (
+              <option key={university} value={university}>
+                {university}
+              </option>
+            ))}
+          </select>
+        </div>
+        <BottomFullLink title="다음으로" to={`/signup/schoolcard`} />
+      </MainContainer>
+    </>
   );
 };

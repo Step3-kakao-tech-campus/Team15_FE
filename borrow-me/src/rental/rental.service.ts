@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Logger } from "@nestjs/common";
 import { Repository } from "typeorm";
 import { Rental } from "./rental.entity";
 import { InjectRepository } from "@nestjs/typeorm";
@@ -29,18 +29,18 @@ export class RentalService {
     });
     await Promise.all(
       rentals
-        .filter((rental) => {
-          rental.status === RENTAL_TYPE.RENT ||
-            rental.status === RENTAL_TYPE.BOOKING;
-        })
+        .filter(
+          (rental) =>
+            rental.status === RENTAL_TYPE.RENT ||
+            rental.status === RENTAL_TYPE.BOOKING
+        )
         .map(async (rental) => {
-          if (new Date(rental.startAt) > new Date()) {
+          if (new Date(rental.startAt).getTime() > new Date().getTime()) {
             rental.status = RENTAL_TYPE.BOOKING;
-            await this.rentalRepository.save(rental);
-          } else if (new Date(rental.endAt) < new Date()) {
+          } else if (new Date(rental.endAt).getTime() < new Date().getTime()) {
             rental.status = RENTAL_TYPE.RENT;
-            await this.rentalRepository.save(rental);
           }
+          await this.rentalRepository.save({ ...rental });
         })
     );
     rentals = await this.rentalRepository.find({

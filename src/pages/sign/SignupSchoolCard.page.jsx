@@ -34,7 +34,6 @@ export const SchoolCardPage = () => {
       allowEditing: true,
       resultType: CameraResultType.DataUrl,
     });
-    alert(image.dataUrl);
 
     if (image) {
       setCanNext(true);
@@ -51,42 +50,45 @@ export const SchoolCardPage = () => {
   };
 
   return (
-    <MainContainer>
-      <div className="mt-20">
-        <SlidePannels maxLengh={3} selectedIndex={2} />
-      </div>
+    <>
+      <div className="h-20 bg-white"></div>
 
-      <div className="flex flex-col items-center">
-        <SignInformation title={`당신의 학교를\n알고 싶어요`} />
-        <div className="w-80 h-44 border-2 border-[#62AB05] rounded-xl relative box-content">
-          <div className="relative w-80 h-44 overflow-hidden rounded-xl">
+      <MainContainer>
+        <div className="mt-20">
+          <SlidePannels maxLengh={3} selectedIndex={2} />
+        </div>
+
+        <div className="flex flex-col items-center">
+          <SignInformation title={`당신의 학교를\n알고 싶어요`} />
+          <div className="relative box-content h-44 w-80 rounded-xl border-2 border-[#62AB05]">
+            <div className="relative h-44 w-80 overflow-hidden rounded-xl">
+              <img
+                className="absolute top-1/2 -translate-y-1/2 scale-125 object-cover"
+                src={imageSrc}
+              />
+            </div>
             <img
-              className="absolute top-1/2 -translate-y-1/2 object-cover scale-125"
+              className="absolute top-1/2 -translate-y-1/2 scale-125 object-cover opacity-20"
               src={imageSrc}
             />
           </div>
-          <img
-            className="absolute top-1/2 -translate-y-1/2 object-cover opacity-20 scale-125"
-            src={imageSrc}
-          />
+          <button
+            className="z-20 mt-28 rounded-full border border-gray-400 p-2"
+            onClick={takePicture}
+          >
+            <Icon type="camera" />
+          </button>
+          <Txt typography="subtitle" colors="secondaryLight" className="my-3">
+            학생증을 촬영해주세요
+          </Txt>
         </div>
-        <button
-          className="border border-gray-400 rounded-full p-2 mt-28 z-20"
-          onClick={takePicture}
-        >
-          <Icon type="camera" />
-        </button>
-        <Txt typography="subtitle" colors="secondaryLight" className="my-3">
-          학생증을 촬영해주세요
-        </Txt>
-      </div>
-
-      <BottomFullLink
-        title="인증하기"
-        onClick={onSignUp}
-        isActive={canNext}
-        to="#"
-      />
-    </MainContainer>
+        <BottomFullLink
+          title="인증하기"
+          onClick={onSignUp}
+          isActive={canNext}
+          to="#"
+        />
+      </MainContainer>
+    </>
   );
 };

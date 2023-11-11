@@ -8,6 +8,7 @@ import {
   Patch,
   UseFilters,
   UseInterceptors,
+  Logger,
 } from "@nestjs/common";
 import { UsersService } from "./user.service";
 import { EmailDto, SignInDto, SignUpDto } from "./user.dto";
@@ -30,21 +31,14 @@ export class UsersController {
   @Post("join")
   async create(@Body() signUpDto: SignUpDto) {
     const isSameEmail = await this.usersService.isSameEmail(signUpDto.email);
-    if (isSameEmail) {
+    if (!!isSameEmail) {
       throw new CommonError({
         status: 400,
         message: "회원가입에 실패했습니다.",
         reason: "join_duplicated_email",
       });
     }
-    const isSuccess = await this.usersService.create(signUpDto);
-    if (!isSuccess) {
-      throw new CommonError({
-        status: 400,
-        message: "회원가입에 실패했습니다.",
-        reason: "join_duplicated_email",
-      });
-    }
+    this.usersService.create(signUpDto);
     return null;
   }
 
@@ -76,7 +70,6 @@ export class UsersController {
     }
 
     res["cookie"]("Authentication", accessToken, {
-      domain: this.configService.get("JWT_LOCAL_PATH"),
       path: "/",
       httpOnly: true,
       sameSite: "none",
@@ -104,7 +97,6 @@ export class UsersController {
   @UseInterceptors(AuthInterceptor)
   logout(@Res({ passthrough: true }) res: Response) {
     res["cookie"]("Authentication", "", {
-      domain: this.configService.get("JWT_LOCAL_PATH"),
       path: "/",
       httpOnly: true,
       sameSite: "none",

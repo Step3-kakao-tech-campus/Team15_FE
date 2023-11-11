@@ -42,40 +42,43 @@ export const AccountPage = () => {
   };
 
   return (
-    <MainContainer>
-      <div className="mt-20">
-        <SlidePannels maxLengh={3} selectedIndex={1} />
-      </div>
-      <div className="flex flex-col items-center">
-        <SignInformation title={`이메일과 비밀번호를\n설정하세요`} />
-        <div className="flex flex-col gap-4 w-3/4">
-          <Input
-            key="email"
-            className="text-lg"
-            type="text"
-            label="Email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-          <Input
-            key="password"
-            className="text-lg"
-            type="password"
-            label="Password"
-            value={password}
-            onChange={handlePasswordChange}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                onNext();
-              }
-            }}
-          />
-          <Txt typography="subtitle" colors="secondaryLight">
-            비밀번호는 영어와 숫자, 특수문자 포함하는 8자 이상
-          </Txt>
+    <>
+      <div className="h-20 bg-white"></div>
+      <MainContainer>
+        <div className="mt-20">
+          <SlidePannels maxLengh={3} selectedIndex={1} />
         </div>
-      </div>
-      <BottomFullLink title="다음으로" onClick={onNext} isActive={canNext} />
-    </MainContainer>
+        <div className="flex flex-col items-center">
+          <SignInformation title={`이메일과 비밀번호를\n설정하세요`} />
+          <div className="flex w-3/4 flex-col gap-4">
+            <Input
+              key="email"
+              className="text-lg"
+              type="text"
+              label="Email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+            <Input
+              key="password"
+              className="text-lg"
+              type="password"
+              label="Password"
+              value={password}
+              onChange={handlePasswordChange}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  onNext();
+                }
+              }}
+            />
+            <Txt typography="subtitle" colors="secondaryLight">
+              비밀번호는 영어와 숫자, 특수문자 포함하는 8자 이상
+            </Txt>
+          </div>
+        </div>
+        <BottomFullLink title="다음으로" onClick={onNext} isActive={canNext} />
+      </MainContainer>
+    </>
   );
 };
