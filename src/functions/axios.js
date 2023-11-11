@@ -25,7 +25,7 @@ https.interceptors.response.use(
       return;
     }
     if (error.response.status == 401) {
-      window.location.href = "singin";
+      window.location.href = "/signin";
       return;
     }
     if (error.response.status >= 400) {
