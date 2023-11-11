@@ -115,6 +115,13 @@
 
   <br/><br/>
 
+## 🧐 주안점을 두고 개발한 기능
+- 코드의 재사용성을 높이기 위해 만들 수 있는 거의 모든 컴포넌트들을 'src/components'에 따로 생성을 해두고,
+  필요한 컴포넌트들을 가져다 쓰는 식으로 구현하였습니다! 😎
+- 사용자가 **최소한의 경로로 최대한 간편하게 대여** 할수있도록 고민하여 불필요한 로직들을 없앴습니다!
+  
+ <br/><br/>
+ 
 ## ⚙️ 기술 stack
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1699624370376?alt=media&token=c29b1847-20e1-4610-8479-40d0b0d37290)](https://github.com/msdio/stackticon)
 - react: 협업하기에 가장 적합하다고 생각합니다.
@@ -132,9 +139,10 @@
 - react-icons: 잘 정리된 레퍼런스와, 폭 넓은 아이콘의 개수가 매력적이라 선택했습니다.
 - classnames: 아무래도 tailwindcss와 섞어서 쓰기에는 classnames는 매우 찰덕 궁합이라고 생각합니다.
 - react-device-detect: APP을 지원하다보니 iOS와 desktop을 판단할 요소가 필요하였습니다.
+  
 <br/><br/>
 
-## 디렉토리 구조
+## 📂 디렉토리 구조
 📦 src  
  ┣ 📂 apis  
  ┃ ┣ 📂 dtos  
@@ -247,14 +255,14 @@
  ┗ 📜 main.jsx  
   
 
-## ☑️ 시작가이드
+## ⭐️ 시작가이드
 파일을 클론 한 후 아래의 명령어를 입력해 프로젝트를 직접 실행 해 볼 수 있습니다.
 ```
 pnpm install
 pnpm dev
 ```
 
-## ☑️ capatitor 실행과 관련하여
+## ⭐️ capatitor 실행과 관련하여
 
 ```sh
 ionic cap run ios -l --external
