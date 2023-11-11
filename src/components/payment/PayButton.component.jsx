@@ -44,10 +44,10 @@ export const PaymentPayButton = ({ productId }) => {
   return (
     <div
       className={classnames(
-        "fixed bottom-0",
+        "fixed bottom-0 z-20 bg-white px-6",
         isMobile
           ? "w-[calc(100%-3rem)] pb-[env(safe-area-inset-bottom)]"
-          : "w-[calc(480px-3rem)] pb-4"
+          : "w-[480px] -translate-x-6 py-4"
       )}
     >
       <Button isActive={canPay} onClick={onCreateRental}>

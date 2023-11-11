@@ -8,7 +8,7 @@ import { BASE_PADDING } from "../../constants/index.js";
  *  hasBottomFullLink?: boolean
  * }}
  */
-export const MainContainer = ({ children, hasBottomFullLink = false }) => {
+export const MainContainer = ({ children, hasBottomFullLink = true }) => {
   return (
     <main
       aria-label="main"
@@ -17,7 +17,7 @@ export const MainContainer = ({ children, hasBottomFullLink = false }) => {
         BASE_PADDING,
         hasBottomFullLink
           ? isMobile && isIOS
-            ? "h-[calc(100vh-10rem-env(safe-area-inset-top))]"
+            ? "h-[calc(100vh-9rem-env(safe-area-inset-top))]"
             : "h-[calc(100vh-9rem)]"
           : isMobile && isIOS
           ? "h-[calc(100vh-3.5rem-env(safe-area-inset-top))]"

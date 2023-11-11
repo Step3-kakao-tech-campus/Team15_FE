@@ -23,13 +23,13 @@ export const BottomFullLink = ({
   return (
     <div
       className={classnames(
-        "fixed bottom-0 z-20",
+        "fixed bottom-0 z-20 bg-white px-6",
         isMobile
           ? "w-[calc(100%-3rem)] pb-[env(safe-area-inset-bottom)]"
-          : "w-[calc(480px-3rem)] pb-4"
+          : "w-[480px] -translate-x-6 py-4"
       )}
     >
-      {br && <Br className="bg-white py-0 pb-3" />}
+      {br && <Br className="bg-white pb-3" />}
       <Link to={to} onClick={onClick}>
         <Button isActive={isActive}>{title}</Button>
       </Link>

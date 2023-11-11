@@ -124,10 +124,11 @@ export class ProductService {
     const product = await this.productRepository.findOne({
       where: { productPk: id },
     });
-    const dayDiff = Math.ceil(
-      (new Date(endAt).getTime() - new Date(startAt).getTime()) /
-        (1000 * 3600 * 24)
-    );
+    const dayDiff =
+      Math.ceil(
+        (new Date(endAt).getTime() - new Date(startAt).getTime()) /
+          (1000 * 3600 * 24)
+      ) + 1;
     const company = await this.companyRepository.findOne({
       where: { companyPk: product.companyPk },
     });

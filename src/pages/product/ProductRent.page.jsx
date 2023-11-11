@@ -18,7 +18,7 @@ export const RentPeriodPage = () => {
         <BottomFullLink
           title="결제하기"
           to={`/payment/${id}`}
-          isActive={!!rentData.to && !!rentData.from}
+          isActive={!!rentData?.to && !!rentData?.from}
         />
       </MainContainer>
     </>
