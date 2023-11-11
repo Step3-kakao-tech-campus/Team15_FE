@@ -37,14 +37,6 @@
 <br/>
 
 ## 🧾 주요 화면 소개
-<p align="left">
-  <img width="252" alt="image" src="https://github.com/Step3-kakao-tech-campus/Team15_FE/assets/102536227/5d519c51-2984-45fb-99c7-f0b8336140db" align="center" width="10%">
-</p>
-
-### 0️⃣ 스플래시 화면
-- 앱/웹 실행시 초기화면입니다.
-
-<br/><br/>
 
 <p align="left">
   <img src="https://i.ibb.co/3cWDNKC/1.png" align="center" width="24%">
